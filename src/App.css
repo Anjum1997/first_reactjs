@@ -3,9 +3,12 @@ body{
   margin:0px;
   box-sizing: border-box;
 }
-form{
+.section{
 width:1000px;
 height:560px;
+}
+
+form{
 margin:auto;
 background-image: url("/public/images/1.jpg");
 background-repeat: no-repeat;

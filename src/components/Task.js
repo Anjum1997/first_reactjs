@@ -22,7 +22,7 @@ function handleSubmit(e){
 }
 
   return (
-    <>
+    < div className="section">
      <form onSubmit={handleSubmit}>
      <div className="container">
             <div className="form_field">
@@ -83,7 +83,7 @@ function handleSubmit(e){
 </form>
 
 
-    </>
+    </div>
   );
 };
 
