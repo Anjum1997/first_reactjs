@@ -6,10 +6,10 @@ body{
 .section{
 width:1000px;
 height:560px;
+margin:auto;
 }
 
 form{
-margin:auto;
 background-image: url("/public/images/1.jpg");
 background-repeat: no-repeat;
 background-position: center;

@@ -1,11 +1,16 @@
 
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
 
 
 function Task() {
     const initialData = {occupation: "", monthlyIncome: "", goal: "", invest: "" }; 
    const[inputData ,setInputData] = useState(initialData)
 
+   
+useEffect( ()=>{
+  console.log(`YOUR ${inputData} HAS BEEN CONSIDERED`)
+ },
+  [inputData]);
 
  function handleChange(e){
   setInputData ({...inputData, [e.target.name]:e.target.value})
