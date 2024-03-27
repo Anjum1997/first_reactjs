@@ -1,0 +1,89 @@
+
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.section{
+    width:1260px;
+    height:520px;
+    margin:auto;
+    background-image:url(../../assets/image/office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+.content{
+    width:1200px;
+    height:500px;
+}
+.text1{
+  width:600px;
+  height:480px;
+ position: relative;
+}
+.heading{
+    width:500px;
+    height:80px;
+    position:absolute;
+    top:180px;
+    left:130px;
+} 
+.heading h1{
+    width:450px;
+    height:75;
+    font-size:30px;
+    font-weight: 900;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-transform: capitalize;
+   color:deeppink;
+}
+.heading h1:hover{
+ color:rgb(182, 174, 174);
+}
+.para{
+    width:500px; 
+    height:75px;
+    position:absolute;
+    top:275px;
+    left:155px;
+}
+.para p{
+    width:600px;
+    height:70px;
+    font-size:16px; 
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-transform: capitalize;
+   color:darkorange;
+   line-height:20px;
+}
+.para p:hover{
+    color:rgb(154, 69, 8);
+}
+.btn_{
+     width:160px;
+    height:45px;
+    position:absolute;
+    top:360px;
+    left:175px; 
+
+}
+.begin{
+    width:150px;
+    height:40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size:16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-weight: bolder;
+    color:white;
+   background-color:red;
+    transition:linear .5s ease-in-out;
+
+}
+.begin:hover{
+    color:red;
+    background-color:#00ff6e;
+}

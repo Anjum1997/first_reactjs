@@ -1,21 +1,28 @@
 
-import React, { useState,useEffect } from "react"
-
+import React, { useState,useEffect,useRef} from "react";
 
 function Task() {
-    const initialData = {occupation: "", monthlyIncome: "", goal: "", invest: "" }; 
-   const[inputData ,setInputData] = useState(initialData)
 
-   
-useEffect( ()=>{
-  console.log(`YOUR ${inputData} HAS BEEN CONSIDERED`)
- },
+  const dataRef = useRef();
+  
+    const initialData = {
+      occupation: "",
+      monthlyIncome: "",
+       goal: "",
+      invest: "" 
+        }; 
+
+   const[inputData ,setInputData] = useState(initialData);
+
+    useEffect( ()=>{ 
+ console.log(`YOUR ${inputData} HAS BEEN CONSIDERED`)
+   },
   [inputData]);
-
+ 
  function handleChange(e){
   setInputData ({...inputData, [e.target.name]:e.target.value})
-  console.log(inputData);
  }
+ 
 function handleSubmit(e){
   e.preventDefault();
   if(!inputData.occupation || !inputData.monthlyIncome || !inputData.goal || !inputData.invest){
@@ -26,13 +33,21 @@ function handleSubmit(e){
   }
 }
 
+const handleClick = ()=> {
+  dataRef.current.focus();
+  dataRef.current.style.color ="orange";
+  dataRef.current.style.backgroundColor = "green";
+   
+}
   return (
     < div className="section">
      <form onSubmit={handleSubmit}>
      <div className="container">
             <div className="form_field">
               <h1 className="heading">What is your occupation?</h1>
-              <input type="text"
+              <input
+              ref ={dataRef}
+               type="text"
                name="occupation" 
                value={inputData.occupation} 
                onChange={handleChange} 
@@ -40,7 +55,8 @@ function handleSubmit(e){
             </div>
             <div className="form_field">
               <h1 className="heading"> what is your Monthly Income?</h1>
-              <input type="number" 
+              <input 
+              type="number" 
               name="monthlyIncome"
               value={inputData.monthlyIncome} 
                onChange={handleChange} 
@@ -49,7 +65,8 @@ function handleSubmit(e){
             </div>
             <div className="form_field">
             <h1 className="heading">what do you think is your biggest obstacle to hitting your monthly goal?</h1>
-              <input type="text" 
+              <input
+              type="text" 
               name="goal"
               value={inputData.goal}
                onChange={handleChange} 
@@ -58,7 +75,8 @@ function handleSubmit(e){
             </div>
             <div className="form_field">
             <h1 className="heading">how willing and able are you to invest in growth of  your real estate career right now?</h1>
-              <input type="text"
+              <input 
+              type="text"
               name="invest"
                value={inputData.invest} 
                onChange={handleChange}
@@ -81,14 +99,12 @@ function handleSubmit(e){
                 <p className="lb">i have completed all exams and waiting for my test date <br /> <br/>i am in process of getting my license</p>
               </div>
             <div className="btn">
-              <button type="submit">Register</button>
+              <button type="submit" onClick={handleClick}>Register</button>
             </div>
             </div>
 </div>
 </form>
-
-
-    </div>
+ </div>
   );
 };
 
