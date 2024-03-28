@@ -19,6 +19,7 @@ const Services = () => {
         <div className="group">
           <img src={photo} alt="naturral" className='source'/>
           </div>
+          <div className="detail">
           <div className="details">
             <p>name:Anamika sharma<br/>
             position:mern stack intern</p>
@@ -32,6 +33,7 @@ const Services = () => {
            <li><i className="fa-brands  ic fa-youtube"></i></li>
           </ul>
           </div>  
+          </div>
         </div>
 
 
@@ -39,6 +41,7 @@ const Services = () => {
         <div className="group">
           <img src={photo1} alt="naturral" className='source'/>
           </div>
+          <div className="detail">
           <div className="details">
             <p>name:roshni malik<br/>
             position:full stack intern</p>
@@ -52,11 +55,12 @@ const Services = () => {
           </ul>
         </div>
         </div>
+        </div>
         <div className="group_">
         <div className="group">
           <img src={photo2} alt="naturral" className='source'/>
           </div>
-          
+          <div className="detail">
           <div className="details">
             <p>name:abhimanyu singh<br/>
             position:mern stack intern</p>
@@ -69,12 +73,14 @@ const Services = () => {
            <li><i className="fa-brands ic fa-youtube"></i></li>
           </ul>
         </div>
+        </div>
        </div>
 
        <div className="group_">
         <div className="group">
           <img src={photo3} alt="naturral" className='source'/>
           </div>
+          <div className="detail">
           <div className="details">
             <p>name:prithvi sharma<br/>
             position:php developer</p>
@@ -86,6 +92,7 @@ const Services = () => {
            <li><i className="fa-brands ic fa-linkedin"></i></li>
            <li><i className="fa-brands ic fa-youtube"></i></li>
           </ul>
+        </div>
         </div>
         </div>
 

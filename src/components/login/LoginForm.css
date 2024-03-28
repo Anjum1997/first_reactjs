@@ -2,6 +2,11 @@
   margin:0px;
   padding:0px;
   box-sizing: border-box;
+  
+}
+.form_{
+  width:1260px;
+  height:420px;
 }
 
 .login-form {
@@ -13,7 +18,7 @@
     border-radius: 5px;
     background-color: #f9f9f9;
     box-sizing: border-box;
-  }
+}
   
   .log{
     width:140px;

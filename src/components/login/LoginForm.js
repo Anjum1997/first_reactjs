@@ -13,7 +13,7 @@ const  LoginForm =()=> {
 
   return (
       
-
+   <div className='form_'>
     <div className="login-form">
       <img src= {logo1} alt="Logo" className="log" /> 
       <h2>Login</h2>
@@ -47,6 +47,7 @@ const  LoginForm =()=> {
           <button type="button" className='login-button' onClick={handleLogin}>submit</button> 
         </div>
      
+    </div>
     </div>
   );
 }

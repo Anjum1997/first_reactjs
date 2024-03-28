@@ -9,9 +9,14 @@ import Home from "./components/pages/Home.js";
 import About  from "./components/pages/About.js";
 import Contact from "./components/pages/Contact.js";
 import Services from "./components/pages/Services.js";
+import Product from "./components/pages/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
 import LoginForm from './components/login/LoginForm.js';
-import Footer from "./components/footer/Footer.js";
+import SliderImages from "./components/slider/SliderImages.js";
+
+
+
+
     function App() {
 
           
@@ -20,6 +25,7 @@ import Footer from "./components/footer/Footer.js";
 <Route path="About" element={<About />} />
 <Route path="Contact" element={<Contact />} />
 <Route path="Services" element={<Services/>} />
+<Route path="Product" element={<Product/>} />
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 
@@ -35,7 +41,7 @@ import Footer from "./components/footer/Footer.js";
       <About/> 
       <Contact/>
       <Services/>
-      {/* <Footer/> */}
+      <SliderImages/>
       
        </>
       );

@@ -83,29 +83,28 @@
     text-align: center;   
     display: inline-block;
 }
-
 .list-icons ul{
     list-style:none;
-    
+    text-align: left;
 }
  .list-icons ul li{
     list-style:none;
     width:190px;
-    font:18px;
+    font:16px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight:900;
     margin-left:10px;
     display: inline-block;
-    color:#00d13f;
+    color:#121259;
 }
  .rs{
-    margin-left:2px;
+    margin-left:6px;
     font-size:16px;
     color:red;
  }
 
  .list-icons ul li:hover{
-color:#121259;
+color:#00d13f;
 } 
 
 .btn{
@@ -114,10 +113,14 @@ color:#121259;
     margin-left:145px;
     margin-top:25px;
    background-color: blue;
+   color:white;
+   text-transform: capitalize;
    text-align:center;
    transition:all .8s linear;
    position: relative;
    z-index:1;
+   font-size: 14px;
+   font-weight: 900;
   }
   span{
     width:0%;
