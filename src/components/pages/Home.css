@@ -58,7 +58,7 @@
     height:32px;
     margin:auto;
     padding-left:48px;
-    padding-top:10px;
+    padding-top:18px;
 
    
 }
@@ -74,7 +74,7 @@
 .row h1{
 width:150px;
 height:45px;
-margin-top:14px;
+margin-top:24px;
 margin-left:25px;
 color:white;
 font-size: 20px;
@@ -84,7 +84,7 @@ text-transform: capitalize;
 
 }
 .row h1:hover{
-color:green;
+color:brown;
 }
 .line{
     width:230px;

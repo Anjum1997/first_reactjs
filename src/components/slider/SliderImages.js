@@ -2,14 +2,7 @@
  import React from 'react';
  import ImageSlider from "./ImageSlider.js";
 
-
-
-
-
  const SliderImages = () => {
- 
- 
- 
  
  const images = [
 

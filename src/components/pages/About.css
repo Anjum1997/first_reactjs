@@ -118,11 +118,11 @@ color:#00d13f;
    text-align:center;
    transition:all .8s linear;
    position: relative;
-   z-index:1;
    font-size: 14px;
    font-weight: 900;
+   z-index: auto;
   }
-  span{
+ .btn span{
     width:0%;
     height:100%;
     position:absolute;
