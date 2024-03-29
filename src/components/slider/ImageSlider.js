@@ -22,7 +22,6 @@ const ImageSlider = ({ images }) => {
   return (
     <div className="container-img">
     <div className="slider-images">
-   
       <button className="l_arrow" onClick={prev}> ❰ </button>
       <button className="r_arrow" onClick={next}> ❱ </button>
       {images.map((image, index) => (

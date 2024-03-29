@@ -13,6 +13,7 @@ import Product from "./components/pages/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
 import LoginForm from './components/login/LoginForm.js';
 import SliderImages from "./components/slider/SliderImages.js";
+import HeaderSlider from './components/slider/HeaderSlider.js';
 
 
 
@@ -42,6 +43,7 @@ import SliderImages from "./components/slider/SliderImages.js";
       <Contact/>
       <Services/>
       <SliderImages/>
+      <HeaderSlider/>
       
        </>
       );

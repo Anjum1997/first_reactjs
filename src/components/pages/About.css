@@ -120,7 +120,6 @@ color:#00d13f;
    position: relative;
    font-size: 14px;
    font-weight: 900;
-   z-index: auto;
   }
  .btn span{
     width:0%;
@@ -133,7 +132,7 @@ color:#00d13f;
 }
  .btn:hover span{
     width:100%;
-   
+    z-index:1;  
  }
  .right_{
     width:660px;
