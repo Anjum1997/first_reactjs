@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link} from "react-router-dom";
 import logo from "../../assets/image/leber.png";
 
 import "./Navbar.css";
 
 const Navbar = () => {
+
   return (
     <div className="topbar">
         <div className="logo">
@@ -14,19 +15,19 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>  
-          <NavLink to="/">Home</NavLink>
+          <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink to="/About">About</NavLink>
+            <Link to="/About">About</Link>
           </li>
           <li>
-            <NavLink to="/Contact">Contact</NavLink>
+            <Link to="/Contact">Contact</Link>
           </li>
           <li>
-            <NavLink to="/Services">Services</NavLink>
+            <Link to="/Services">Services</Link>
           </li>
           <li>
-            <NavLink to="/Product">Product</NavLink>
+            <Link to="/Product">Product</Link> 
           </li>
         </ul>
       

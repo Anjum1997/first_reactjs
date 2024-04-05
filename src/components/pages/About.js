@@ -6,15 +6,13 @@ import image3 from "../../assets/image/about-02.jpg";
 
 
 const About  = () => { 
-   
   return  (
 
-  
   <div className="section2">
         <div className="container_">
             <div className="heading_">
                 <div className="content_">
-                    <h1>// About Our Company</h1>
+                    <h1> About Our Company</h1>
                     <p>The Best Digital <br/>Marketing Agency In Town</p>
                 </div>
                 <div className="content1">
@@ -37,9 +35,9 @@ const About  = () => {
                  </div>
             <div className="right_">
                 <div className="about-image">
-                <img src={image1} className="dot"/>
-            <img src={image2} className="top"/>
-            <img src={image3} className="bottom"/>
+                <img src={image1} alt="a" className="dot"/>
+            <img src={image2} alt ="b" className="top"/>
+            <img src={image3} alt ="c" className="bottom"/>
             </div>
         </div>
     </div>

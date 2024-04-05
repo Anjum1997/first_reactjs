@@ -27,7 +27,7 @@
 .content_ h1{
     width:430px;
     height:30px;
-    margin-left:15px;
+    margin-left:20px;
     margin-top:5px;
     font-size:20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -120,6 +120,7 @@ color:#00d13f;
    position: relative;
    font-size: 14px;
    font-weight: 900;
+   z-index: 1;
   }
  .btn span{
     width:0%;
@@ -128,11 +129,11 @@ color:#00d13f;
     left:0px;
     bottom:0px;
     transition:0.5s linear;
-    background-color: #008000;  
+    background-color: #008000; 
+    z-index: -1;
 }
  .btn:hover span{
     width:100%;
-    z-index:1;  
  }
  .right_{
     width:660px;

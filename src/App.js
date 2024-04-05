@@ -1,7 +1,7 @@
 
 import React from 'react';
 // import  Profile from "./layout/Profile.js" 
-// import UserState from "./components/context/UserState.js";
+// import UserState from "./components/context/UserStatie.js";
  import Header from "./components/header/Header.js";
 import {Routes, Route} from "react-router-dom";
 import Navbar from "./components/navbar/Navbar.js";
@@ -14,13 +14,13 @@ import NoPageFound from "./components/pages/NoPageFound.js";
 import LoginForm from './components/login/LoginForm.js';
 import SliderImages from "./components/slider/SliderImages.js";
 import HeaderSlider from './components/slider/HeaderSlider.js';
-
+ import Detail from './layout/Detail.js';
+import Footer from './components/footer/Footer.js';
 
 
 
     function App() {
-
-          
+        
 <Routes>
 <Route path="/" element={<Home />} />
 <Route path="About" element={<About />} />
@@ -35,6 +35,7 @@ import HeaderSlider from './components/slider/HeaderSlider.js';
       
 
         <>
+        
        <Navbar/>
       <Header/>
       <LoginForm/>
@@ -42,9 +43,13 @@ import HeaderSlider from './components/slider/HeaderSlider.js';
       <About/> 
       <Contact/>
       <Services/>
+    <Footer/>
+<br/>
       <SliderImages/>
       <HeaderSlider/>
-      
+      <NoPageFound/>
+       <Detail/>
+
        </>
       );
      };

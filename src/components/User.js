@@ -7,8 +7,7 @@ const User = () => {
     name: "",
     email: "",
     password : "",
-    address: "",
-    phone: ""
+    confirm -password : ""
   });
 
 
@@ -49,17 +48,11 @@ const User = () => {
           placeholder="Enter Address"
         />
         <input
-          value={userData.address}
-          name="address"
-          type="text"
-          placeholder="Enter Address"
+          value={userData.confirm-password}
+          name="confirm-password"
+          type="confirm-password"
+          placeholder="confirm password"
         />
-        <input
-          value={userData.phone}
-          name="phone"
-          type="text"
-          placeholder="Enter Address"
-      />
         <input
           type="submit"
           value={"Submit"}

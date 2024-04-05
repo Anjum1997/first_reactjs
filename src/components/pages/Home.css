@@ -14,14 +14,14 @@
     margin-top:60px;
 }
 .title{
-    width:800px;
+    width:1190px;
     height:45px;
     font-size:30px;
     font-weight: 900;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
    text-transform: capitalize;
    color:#ffd814;
-   padding-left:310px;
+  text-align: center;
    padding-bottom:12px;
 }
 .container{
@@ -97,6 +97,7 @@ font-size:16px;
 font-weight: 700;
 text-align: center;
 text-transform: capitalize;
+z-index:2;
 }
 .para1:hover{
     color:red;
@@ -112,7 +113,7 @@ text-transform: capitalize;
     background-color:#00ff0d;
     transition: all 800ms linear;
     overflow:hidden;
-    z-index: -1;
+    z-index:-1;
   
 }
 .part:hover:after{

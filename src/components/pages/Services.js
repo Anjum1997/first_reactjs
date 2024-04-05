@@ -24,18 +24,16 @@ const Services = () => {
             <p>name:Anamika sharma<br/>
             position:mern stack intern</p>
             </div>
-           
         <div className="icons-list">
           <ul>
            <li><i className="fa-brands ic fa-google"></i></li> 
-           <li><i className="fa-brands ic fa-square-instagram"></i></li>
-           <li><i className="fa-brands ic fa-linkedin"></i></li>
-           <li><i className="fa-brands  ic fa-youtube"></i></li>
+         <li><i className="fa-brands ic fa-square-instagram"></i></li>
+         <li><i className="fa-brands ic fa-linkedin"></i></li>
+          <li><i className="fa-brands  ic fa-youtube"></i></li>
           </ul>
           </div>  
           </div>
         </div>
-
 
        <div className="group_">
         <div className="group">
