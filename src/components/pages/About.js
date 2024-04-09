@@ -6,6 +6,7 @@ import image3 from "../../assets/image/about-02.jpg";
 
 
 const About  = () => { 
+    console.log('frgre');
   return  (
 
   <div className="section2">

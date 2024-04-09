@@ -64,6 +64,21 @@ nav ul li a:hover{
     color:green
 }
 
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #444; /* Adjust submenu background color */
+  z-index: 1;
+}
+
+.submenu li {
+  display: block;
+}
+
+.navbar li:hover .submenu {
+  display: block;
+}
 .search-bar {
     display: flex;
     justify-content: right;

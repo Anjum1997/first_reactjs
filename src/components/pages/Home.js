@@ -7,7 +7,7 @@ const Home = () => {
    <div className="section1">
     <div className="context">
       <h1 className="title">welcome to our enterprises</h1>
-      <div className="container">
+      <div className="contain">
         <div className="part_">
       <div className="part">
       <div className="row">

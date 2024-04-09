@@ -1,0 +1,41 @@
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    margin:auto;
+    padding-top:30px;
+  }
+  
+  .progress-item {
+    margin-bottom: 10px;
+  }
+  
+  .progress-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .progress-wrapper {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 20px;
+    background-color: #007bff; 
+  }
+  
+  .progress-percent {
+    margin-top: 5px;
+  }
+  
+  .progress-controls {
+    margin-top: 5px;
+  }
+  
+  .progress-controls button {
+    margin-right: 5px;
+  }
+  

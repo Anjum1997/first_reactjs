@@ -15,10 +15,10 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>  
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/About">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/Contact">Contact</Link>
@@ -28,6 +28,11 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/Product">Product</Link> 
+            <ul className="submenu">
+            <li><Link to="/Product/Product_Card">ProductCard</Link></li>
+            <li><Link to ="/Product/Producrt_List">ProductList</Link></li>
+          
+          </ul>
           </li>
         </ul>
       

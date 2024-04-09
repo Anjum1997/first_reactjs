@@ -1,6 +1,5 @@
 
-
-import React from 'react';
+import React,{useState} from 'react';
 import "./Services.css";
 import photo from "../../assets/image/photo.jpg";
 import photo1 from "../../assets/image/photo1.jpg";
@@ -8,14 +7,20 @@ import photo2 from "../../assets/image/photo2.jpg";
 import photo3 from "../../assets/image/photo3.jpg";
 
 const Services = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  
   return (
     <div className='section4'>
       <div className="image">
       <div className="image_heading">
        <h1>our trusted employees</h1>
        </div>
-       <div className="image_group">
-       <div className="group_">
+       <div className="image_group ">
+      
+       <div className="group_"
+       onMouseEnter={() => setIsHovered(true)}
+       onMouseLeave={() => setIsHovered(false)}>
         <div className="group">
           <img src={photo} alt="naturral" className='source'/>
           </div>

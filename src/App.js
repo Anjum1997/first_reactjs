@@ -1,7 +1,5 @@
 
 import React from 'react';
-// import  Profile from "./layout/Profile.js" 
-// import UserState from "./components/context/UserStatie.js";
  import Header from "./components/header/Header.js";
 import {Routes, Route} from "react-router-dom";
 import Navbar from "./components/navbar/Navbar.js";
@@ -12,21 +10,23 @@ import Services from "./components/pages/Services.js";
 import Product from "./components/pages/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
 import LoginForm from './components/login/LoginForm.js';
-import SliderImages from "./components/slider/SliderImages.js";
-import HeaderSlider from './components/slider/HeaderSlider.js';
- import Detail from './layout/Detail.js';
+// import SliderImages from "./components/slider/SliderImages.js";
+// import HeaderSlider from './components/slider/HeaderSlider.js';
+// import  Profile from "./layout/Profile.js" 
+// import UserState from "./components/context/UserStatie.js";
 import Footer from './components/footer/Footer.js';
-
+import Page from './components/pagination/Page.js';
+// import Progressbar from './components/progress/Progressbar.js';
 
 
     function App() {
         
 <Routes>
-<Route path="/" element={<Home />} />
-<Route path="About" element={<About />} />
-<Route path="Contact" element={<Contact />} />
-<Route path="Services" element={<Services/>} />
-<Route path="Product" element={<Product/>} />
+<Route path="/home"> <Home/></Route>
+<Route path="/about" element={<About />} />
+<Route path="contact" element={<Contact />} />
+<Route path="services" element={<Services/>} />
+<Route path="product" element={<Product/>} />
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 
@@ -34,7 +34,7 @@ import Footer from './components/footer/Footer.js';
       return (
       
 
-        <>
+        <div>
         
        <Navbar/>
       <Header/>
@@ -44,18 +44,14 @@ import Footer from './components/footer/Footer.js';
       <Contact/>
       <Services/>
     <Footer/>
-<br/>
-      <SliderImages/>
-      <HeaderSlider/>
-      <NoPageFound/>
-       <Detail/>
-
-       </>
+      <Page/>
+      {/* <Progressbar/> */}
+   
+   
+       </div>
       );
      };
 
-    
-      
     
     export default App;
     

@@ -8,6 +8,7 @@
 
     {
         url: `https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1388286115.1709657894&semt=sph`,
+  
     },
 
 {

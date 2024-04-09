@@ -22,6 +22,9 @@ const ImageSlider = ({ images }) => {
   return (
     <div className="container-img">
     <div className="slider-images">
+    <h1>welcome to the company<br/> as a software developer </h1>
+<p>congratulations to all for your dedication and<br/>hard work at every moment for the growth<br/> and development of the company. </p>
+<button type ="button" className="begin">ready to begin...</button>
       <button className="l_arrow" onClick={prev}> ❰ </button>
       <button className="r_arrow" onClick={next}> ❱ </button>
       {images.map((image, index) => (
