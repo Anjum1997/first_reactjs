@@ -26,7 +26,7 @@ import Pagination from './Pagination.js';
     }
   };
 
-  const postsPerPage = 5;
+  const postsPerPage =10;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   

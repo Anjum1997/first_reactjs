@@ -9,14 +9,14 @@ import Contact from "./components/pages/Contact.js";
 import Services from "./components/pages/Services.js";
 import Product from "./components/pages/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
-import LoginForm from './components/login/LoginForm.js';
 // import SliderImages from "./components/slider/SliderImages.js";
 // import HeaderSlider from './components/slider/HeaderSlider.js';
 // import  Profile from "./layout/Profile.js" 
 // import UserState from "./components/context/UserStatie.js";
 import Footer from './components/footer/Footer.js';
 import Page from './components/pagination/Page.js';
-// import Progressbar from './components/progress/Progressbar.js';
+import SignIn from './components/login/SignIn.js';
+import SignUp from './components/login/SignUp.js';
 
 
     function App() {
@@ -38,13 +38,14 @@ import Page from './components/pagination/Page.js';
         
        <Navbar/>
       <Header/>
-      <LoginForm/>
+      <SignIn/>
       <Home/>
       <About/> 
       <Contact/>
       <Services/>
     <Footer/>
       <Page/>
+      <SignUp/>
       {/* <Progressbar/> */}
    
    

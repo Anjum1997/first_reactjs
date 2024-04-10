@@ -1,45 +1,39 @@
 import React from "react";
 import { useFormik } from "formik";
-import {userSchema }from "./Schema.js";
-import './LoginRegisterForm.css';
+import { userSchema } from "./Schema";
+import './Form.css';
 import logo1 from "../../assets/image/logo.png";
 
+const initialValues = {
+  name: "",
+  email: "",
+  password: "",
+  confirm_password: "",
+};
 
-const Register = () => {
-  const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    confirm_password: "",
-  };
-
-  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+const SignUp = () => {
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
-      validationSchema:userSchema,
-      validateOnChange: true,
-      validateOnBlur: false,
-      ///By disabling validation onChange and onBlur formik will validate on submit.
+      validationSchema: userSchema,
       onSubmit: (values, action) => {
-
-        //// to get rid of all the values after submitting the form
+      
         action.resetForm();
       },
     });
-
   console.log(errors);
 
   return (
     <>
-   
-   <div className='form_'>
-    <div className="login-form">
- <form onSubmit={handleSubmit}>
-                <img src= {logo1} alt="Logo" className="log" /> 
-                 <h2>Register</h2>
+          <div className="modal-container">
+            <div className="modal">
+              <div className="modal_">
+              <img src= {logo1} alt="Logo" className="log" /> 
+                           <h2>SignUp</h2>
+                           </div>
+                <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label> Name:
-                    </label>
+                    <label> Name:</label>
                     <input
                       type="name"
                       autoComplete="off"
@@ -50,7 +44,7 @@ const Register = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-                    {touched.name && errors.name ? (
+                    {errors.name && touched.name ? (
                       <p className="form-error">{errors.name}</p>
                     ) : null}
                   </div>
@@ -68,9 +62,11 @@ const Register = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
+                      <i className="fas fa-envelope"></i>
                     {errors.email && touched.email ? (
                       <p className="form-error">{errors.email}</p>
                     ) : null}
+                     
                   </div>
                   <div className="form-group">
                     <label>
@@ -86,13 +82,15 @@ const Register = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
+                     <i className=" fas fa-eye-slash"></i> 
                     {errors.password && touched.password ? (
                       <p className="form-error">{errors.password}</p>
                     ) : null}
+                   
                   </div>
                   <div className="form-group">
                     <label>
-                      confirm_Password:
+                      Confirm Password:
                     </label>
                     <input
                       type="password"
@@ -104,23 +102,35 @@ const Register = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
+                     <i className=" fas fa-eye-slash"></i> 
                     {errors.confirm_password && touched.confirm_password ? (
                       <p className="form-error">{errors.confirm_password}</p>
                     ) : null}
+                     
                   </div>
-                  <div className="form-group">
-                    <button className="login-button" type="submit">
-                      Registration
+                  <div className="modal-buttons">
+                    <div className="mail">  <a href="#">
+                      Want to signup using Gmail?
+                    </a></div>
+                    <div className="but">
+                    <button className="login" type="submit">
+                    SignUp
                     </button>
-                   </div>
+                    </div>
+                  </div>
                 </form>
+                <p className="sign-up">
+                  Already have an account? <a href="#">Sign In now</a>
+                </p>
               </div>
+            
               </div>
-        
-      </>
-  
+           
+       
+    </>
   );
 };
 
 
-export default Register;
+ export default SignUp;
+  

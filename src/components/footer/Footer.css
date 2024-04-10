@@ -11,7 +11,7 @@
   background: linear-gradient(135deg, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.85) 63%, #FF3C00 130%);
 }
 .footer_{
- width:900px;
+ width:1000px;
  margin:auto;
  height:242px;
  display:flex;
@@ -32,23 +32,24 @@
     
 }  
   .left_  p {
-    padding: 10px 5px;
+    padding: 15px 5px;
     font-weight: 500;
     color:darkgoldenrod;
     font-size: 19px;
     text-transform: capitalize;
   }
   .footer-icons{
-  width:150px;
+  width:180px;
   height:40px;
   margin: auto;
-  }
+ }
   .footer-icons i {
     display:inline-block;
     background-color: #e1e1e1;
     color: #f60838;
     font-size: 18px;
     border-radius:50%;
+
   }
   .footer-icons i:hover {
     background: #f60838;
@@ -73,7 +74,6 @@
 
   .list_items ul {
     list-style:none;
-    display:block;
   }
   
   .list_items ul li {
@@ -81,11 +81,13 @@
     font-weight: 500;
     color:darkred;
     font-size:17px;
+    display:block
   }
   .info{
-    width:240px;
+    width:280px;
  height:228px;
  text-align:left ;
+
   }
   .info h2{
     width:170px;
@@ -94,6 +96,7 @@
     font-family: cursive;
     font-size:20px;
     color:green;
+   
   }
   .info p {
     font-weight: 500;
@@ -101,7 +104,8 @@
     text-align: left;
     color:red;
     margin-left:25px;
-    width:200px;
+    width:260px;
+    padding-top: 20px;
   }
   
   .info i {
