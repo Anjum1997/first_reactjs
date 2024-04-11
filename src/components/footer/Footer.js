@@ -12,10 +12,12 @@
        <h2>A@Mishra</h2>
        <p>thanks for giving this wonderful oppotunities to boost my carrier and helping me in achieving my goal.</p>
        <div className="footer-icons">
-           <i className="fa-brands fa-facebook"></i>
-           <i className="fa-brands fa-twitter"></i>
-           <i className="fa-brands fa-instagram"></i>
-           <i className="fa-brands fa-telegram"></i>
+        <ul>
+            <li> <i className="fa-brands fa-facebook"></i></li>
+            <li>  <i className="fa-brands fa-twitter"></i></li>
+            <li> <i className="fa-brands fa-instagram"></i></li>
+            <li>  <i className="fa-brands fa-telegram"></i></li>
+           </ul>
        </div>
    </div>
    <div className="list_items">

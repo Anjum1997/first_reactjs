@@ -41,10 +41,19 @@
   .footer-icons{
   width:180px;
   height:40px;
-  margin: auto;
+ 
+ }
+ .footer-icons ul{
+   list-style: none;
+ }
+ .footer-icons ul li{
+   display:inline;
+   width:170px;
+   height:38px;
+   padding-left: 40px;
+  
  }
   .footer-icons i {
-    display:inline-block;
     background-color: #e1e1e1;
     color: #f60838;
     font-size: 18px;
