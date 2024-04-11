@@ -31,7 +31,8 @@ const Navbar = () => {
             <ul className="submenu">
             <li><Link to="/product/Product_Card">ProductCard</Link></li>
             <li><Link to ="/product/Producrt_List">ProductList</Link></li>
-          
+            <li><Link to="/signup">Sign Up</Link></li>
+        <li><Link to="/signin">Sign In</Link></li>
           </ul>
           </li>
         </ul>

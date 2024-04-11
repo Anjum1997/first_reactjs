@@ -1,8 +1,7 @@
 
 import React from 'react';
- import Header from "./components/header/Header.js";
-import {Routes, Route} from "react-router-dom";
-import Navbar from "./components/navbar/Navbar.js";
+import { BrowserRouter ,Routes, Route} from "react-router-dom";
+import Layout from "./layout/Layout.js";
 import Home from "./components/pages/Home.js";
 import About  from "./components/pages/About.js";
 import Contact from "./components/pages/Contact.js";
@@ -13,42 +12,29 @@ import NoPageFound from "./components/pages/NoPageFound.js";
 // import HeaderSlider from './components/slider/HeaderSlider.js';
 // import  Profile from "./layout/Profile.js" 
 // import UserState from "./components/context/UserStatie.js";
-import Footer from './components/footer/Footer.js';
-import Page from './components/pagination/Page.js';
 import SignIn from './components/login/SignIn.js';
 import SignUp from './components/login/SignUp.js';
 
 
     function App() {
-        
+
+      return (
+          <div>
+
+<BrowserRouter>       
 <Routes>
-<Route path="/home"> <Home/></Route>
+<Route path="/"  element={<Layout />}  /> 
+<Route path=" " element={<Home />} />
 <Route path="/about" element={<About />} />
-<Route path="contact" element={<Contact />} />
-<Route path="services" element={<Services/>} />
-<Route path="product" element={<Product/>} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/services" element={<Services />} />
+<Route path="/product" element={<Product />} />
+<Route path="/signup" element={<SignUp />} />
+<Route path="signin" element={<SignIn />} />
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 
-
-      return (
-      
-
-        <div>
-        
-       <Navbar/>
-      <Header/>
-      <SignIn/>
-      <Home/>
-      <About/> 
-      <Contact/>
-      <Services/>
-    <Footer/>
-      <Page/>
-      <SignUp/>
-      {/* <Progressbar/> */}
-   
-   
+</BrowserRouter>
        </div>
       );
      };
@@ -56,13 +42,4 @@ import SignUp from './components/login/SignUp.js';
     
     export default App;
     
-
-    //  <>
-        //  
-        // // <UserState>
-        // // 
-        // //  <Profile/>
-        // //  <Header/>
-        // //  </UserState>
-        //  </>
 

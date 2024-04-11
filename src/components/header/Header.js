@@ -2,10 +2,12 @@
     
 
 import React from 'react';
+import Navbar from "../navbar/Navbar";
 import "./Header.css";
 const Header = () => {
   return (
     <>
+    <Navbar />
  <div className="section">
   <div className="content">
     <div className="text1">
