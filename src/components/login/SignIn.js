@@ -43,7 +43,6 @@ const SignIn = () => {
                       autoComplete="off"
                       name="email"
                       id="email"
-                      placeholder="Email"
                       value={values.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -63,7 +62,6 @@ const SignIn = () => {
                       autoComplete="off"
                       name="password"
                       id="password"
-                      placeholder="Password"
                       value={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -83,7 +81,6 @@ const SignIn = () => {
                       autoComplete="off"
                       name="confirm_password"
                       id="confirm_password"
-                      placeholder="Confirm Password"
                       value={values.confirm_password}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -109,7 +106,7 @@ const SignIn = () => {
           <button type="submit" className="login" >SignIN</button> 
         </div>
         <p className="sign-up">
-                  Don't have an account? <a href="#">SignUp  now</a>
+                  Don't have an account? <Link to="/SignUp">SignUp  now</Link>
                 </p>
      </form>
     </div>

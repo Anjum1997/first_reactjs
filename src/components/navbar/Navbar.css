@@ -64,20 +64,22 @@ nav ul li a:hover{
     color:green
 }
 
-
-.submenu {
+ .submenu{
   display: none;
   position: absolute;
-  background-color: #444; /* Adjust submenu background color */
-  z-index: 1;
+  background-color: #a26969; 
+ padding: 0px;
 }
 
-.submenu li {
+.submenu  li {
   display: block;
 }
 
-.navbar li:hover .submenu {
-  display: block;
+.submenu li a {
+  color:green;
+  text-decoration: none;
+  padding: 5px 10px;
+
 }
 .search-bar {
     display: flex;

@@ -2,7 +2,6 @@
 import React from 'react';
 import { BrowserRouter ,Routes, Route} from "react-router-dom";
 import Layout from "./layout/Layout.js";
-import Home from "./components/pages/Home.js";
 import About  from "./components/pages/About.js";
 import Contact from "./components/pages/Contact.js";
 import Services from "./components/pages/Services.js";
@@ -14,17 +13,16 @@ import NoPageFound from "./components/pages/NoPageFound.js";
 // import UserState from "./components/context/UserStatie.js";
 import SignIn from './components/login/SignIn.js';
 import SignUp from './components/login/SignUp.js';
-
+import Notification  from "./components/firebase/Notification.js";
 
     function App() {
-
+     
       return (
           <div>
 
 <BrowserRouter>       
 <Routes>
 <Route path="/"  element={<Layout />}  /> 
-<Route path=" " element={<Home />} />
 <Route path="/about" element={<About />} />
 <Route path="/contact" element={<Contact />} />
 <Route path="/services" element={<Services />} />
@@ -35,6 +33,7 @@ import SignUp from './components/login/SignUp.js';
 </Routes>
 
 </BrowserRouter>
+<Notification/>
        </div>
       );
      };

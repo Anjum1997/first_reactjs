@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
 import './Form.css';
@@ -39,7 +40,6 @@ const SignUp = () => {
                       autoComplete="off"
                       name="name"
                       id="name"
-                      placeholder="Name"
                       value={values.name}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -57,7 +57,6 @@ const SignUp = () => {
                       autoComplete="off"
                       name="email"
                       id="email"
-                      placeholder="Email"
                       value={values.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -77,7 +76,6 @@ const SignUp = () => {
                       autoComplete="off"
                       name="password"
                       id="password"
-                      placeholder="Password"
                       value={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -97,7 +95,6 @@ const SignUp = () => {
                       autoComplete="off"
                       name="confirm_password"
                       id="confirm_password"
-                      placeholder="Confirm Password"
                       value={values.confirm_password}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -109,9 +106,10 @@ const SignUp = () => {
                      
                   </div>
                   <div className="modal-buttons">
-                    <div className="mail">  <a href="#">
+                    <div className="mail">  <Link to="/Gmail">
                       Want to signup using Gmail?
-                    </a></div>
+                    </Link>
+                    </div>
                     <div className="but">
                     <button className="login" type="submit">
                     SignUp
@@ -120,7 +118,7 @@ const SignUp = () => {
                   </div>
                 </form>
                 <p className="sign-up">
-                  Already have an account? <a href="#">Sign In now</a>
+                  Already have an account? <Link to ="/SignIn">Sign In now</Link>
                 </p>
               </div>
             
