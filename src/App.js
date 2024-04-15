@@ -13,7 +13,7 @@ import NoPageFound from "./components/pages/NoPageFound.js";
 // import UserState from "./components/context/UserStatie.js";
 import SignIn from './components/login/SignIn.js';
 import SignUp from './components/login/SignUp.js';
-import Notification  from "./components/firebase/Notification.js";
+
 
     function App() {
      
@@ -33,7 +33,7 @@ import Notification  from "./components/firebase/Notification.js";
 </Routes>
 
 </BrowserRouter>
-<Notification/>
+
        </div>
       );
      };
