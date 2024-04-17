@@ -1,31 +1,29 @@
-
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
- import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import logo1 from "../../assets/image/logo.png";
 
 const initialValues = {
   email: "",
   password: "",
-  confirm_password: "",
- 
+  confirm_password:"",
+
 };
 
 const SignIn = () => {
-  const { signinWithEmailPassword, signinWithGoogle } = useAuthContext();
+  const { signinWithEmailPassword, signinWithGoogle, error } = useAuthContext();
   const navigate = useNavigate();
-
-  const [error, setError] = useState(null);
+  const [formError, setFormError] = useState(null);
 
   const handleEmailPasswordSignIn = async (values) => {
     try {
       await signinWithEmailPassword(values.email, values.password);
       navigate('/Home');
     } catch (error) {
-      setError(error.message);
+      setFormError(error.message);
     }
   };
 
@@ -34,7 +32,7 @@ const SignIn = () => {
       await signinWithGoogle();
       navigate('/Home');
     } catch (error) {
-      setError(error.message);
+      setFormError(error.message);
     }
   };
 
@@ -47,55 +45,48 @@ const SignIn = () => {
       },
     });
 
-
   return (
     <>
-          <div className="modal-container">
-            <div className="modal">
-              <div className="modal_">
-              <img src= {logo1} alt="Logo" className="log" /> 
-                           <h2>Login</h2>
-                           </div>
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label>
-                      Email:
-                    </label>
-                    <input
-                      type="email"
-                      autoComplete="off"
-                      name="email"
-                      id="email"
-                      value={values.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                     <i className="fas fa-envelope"></i>
-                    {errors.email && touched.email ? (
-                      <p className="form-error">{errors.email}</p>
-                    ) : null}
-                      
-                  </div>
-                  <div className="form-group">
-                    <label>
-                      Password:
-                    </label>
-                    <input
-                      type="password"
-                      autoComplete="off"
-                      name="password"
-                      id="password"
-                      value={values.password}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                      <i className=" fas fa-eye-slash"></i> 
-                    {errors.password && touched.password ? (
-                      <p className="form-error">{errors.password}</p>
-                    ) : null}
-                    
-                  </div>
-                  <div className="form-group">
+      <div className="modal-container">
+        <div className="modal">
+          <div className="modal_">
+            <img src={logo1} alt="Logo" className="log" />
+            <h2>Login</h2>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                autoComplete="off"
+                name="email"
+                id="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              <i className="fas fa-envelope"></i>
+              {errors.email && touched.email ? (
+                <p className="form-error">{errors.email}</p>
+              ) : null}
+            </div>
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                autoComplete="off"
+                name="password"
+                id="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              <i className=" fas fa-eye-slash"></i>
+              {errors.password && touched.password ? (
+                <p className="form-error">{errors.password}</p>
+              ) : null}
+            </div>
+               <div className="form-group">
                     <label>
                       Confirm Password:
                     </label>
@@ -129,13 +120,16 @@ const SignIn = () => {
      <p className="sign-up">
                   Don't have an account? <Link to="/SignUp">SignUp  now</Link>
                 </p>
+                </div>
+                {formError && <p className="form-error">{formError}</p>}
+          {error && <p className="form-error">{error}</p>}
+       
                </div>
     </div>
-    </div>
+
+   
     </>
   );
 };
 
 export default SignIn;
-
-
