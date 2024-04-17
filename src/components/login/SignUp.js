@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Link,  useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
@@ -15,23 +15,27 @@ const initialValues = {
 };
 
 const SignUp = () => {
-  const {signup} = useAuthContext();
-  const navigate =useNavigate();
+  const { signupWithEmailPassword } = useAuthContext();
+ const navigate = useNavigate();
+ const [ error , setError] = useState(null);
+
+ const handleSignUp = async (values) => {
+   try {
+     await signupWithEmailPassword(values.email, values.password);
+     navigate('/SignIn');
+   } catch (error) {
+     setError(error.message);
+   }
+ };
+
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
       validationSchema: userSchema,
-      onSubmit: async (values) => {
-        try {
-         
-          await signup(values.email, values.password);
-          navigate("/SignIn")
-         
-        } catch (error) {
-          console.error("Error signing up:", error);
-      }
-    }
+      onSubmit: (values) => {
+       handleSignUp(values);
+      },
     });
 
 
@@ -145,4 +149,4 @@ const SignUp = () => {
 
 
  export default SignUp;
-  
+ 

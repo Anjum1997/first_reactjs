@@ -1,10 +1,9 @@
 
-import React from "react";
+import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
  import { useAuthContext } from "../context/AuthContext";
-
 import './Form.css';
 import logo1 from "../../assets/image/logo.png";
 
@@ -16,30 +15,26 @@ const initialValues = {
 };
 
 const SignIn = () => {
-  const { signin , googleSignIn} = useAuthContext();
-const navigate = useNavigate();
+  const { signinWithEmailPassword, signinWithGoogle } = useAuthContext();
+  const navigate = useNavigate();
 
+  const [error, setError] = useState(null);
 
-   const handleEmailPasswordSignIn = async ( e, values) => {
-    e.preventDefault();
-    
+  const handleEmailPasswordSignIn = async (values) => {
     try {
-      await signin(values.email, values.password);
-      
-      navigate("/Home"); 
-      
+      await signinWithEmailPassword(values.email, values.password);
+      navigate('/Home');
     } catch (error) {
-      console.error("Error signing in with email and password:", error);
+      setError(error.message);
     }
   };
 
-  const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
+  const handleGoogleSignIn = async () => {
     try {
-      await googleSignIn();
-      navigate("/Home");
+      await signinWithGoogle();
+      navigate('/Home');
     } catch (error) {
-      console.error("Error signing in with Google:", error);
+      setError(error.message);
     }
   };
 
@@ -127,7 +122,8 @@ const navigate = useNavigate();
         </div>
      </form>
      <div className="google_">
-     <button type="button"  className ="google" onClick={handleGoogleSignIn}>Sign in with Google</button>
+     <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
+        {error && <p>{error}</p>}
      </div>
      <div className="account">
      <p className="sign-up">

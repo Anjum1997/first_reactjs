@@ -157,7 +157,9 @@
   .google_{
     width:220px;
     height:30px;
+    text-align:center;
     margin: auto;
+  
   }
   .google{
     width:200px;
@@ -168,8 +170,5 @@
     font-weight: bolder;
     font-size:16px;
     text-transform: capitalize;
-    text-align: left;
-    color:green;
-    
     
   }

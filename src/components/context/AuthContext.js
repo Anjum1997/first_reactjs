@@ -1,37 +1,58 @@
+
 import { createContext, useContext, useState, useEffect } from 'react';
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
-import { auth } from "../firebase/firebase.config"; 
+  createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider,signInWithPopup,} from 'firebase/auth';
+import {auth} from '../firebase/firebase.config';
 
 const AuthContext = createContext();
 
-export function AuthContextProvider ({ children }) {
-  const [user, setUser] = useState({});
+export function AuthContextProvider({ children }) {
+  const [user, setUser] = useState(null);
 
-  function signin(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
-  }
-  function signup(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
-  }
-  function logout() {
-    return signOut(auth);
-  }
-  function googleSignIn() {
-    const googleAuthProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleAuthProvider);
-  }
+  const signinWithEmailPassword = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user);
+    } catch (error) {
+      console.error('Error signing in with email and password:', error);
+      throw error;
+    }
+  };
+
+  const signupWithEmailPassword = async (email, password) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user);
+    } catch (error) {
+      console.error('Error signing up with email and password:', error);
+      throw error;
+    }
+  };
+
+  const signinWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const userCredential = await signInWithPopup(auth, provider);
+      setUser(userCredential.user);
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+      throw error;
+    }
+  };
+
+  const signout = async () => {
+    try {
+      await signOut(auth);
+      setUser(null);
+    } catch (error) {
+      console.error('Error signing out:', error);
+      throw error;
+    }
+  };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      console.log("Auth", currentuser);
-      setUser(currentuser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
     });
 
     return () => {
@@ -39,15 +60,13 @@ export function AuthContextProvider ({ children }) {
     };
   }, []);
 
-  
   return (
-    <AuthContext.Provider value={{ user ,signin, signup, logout, googleSignIn }}
-    >
+    <AuthContext.Provider value={{ user, signinWithEmailPassword, signupWithEmailPassword, signinWithGoogle, signout }}>
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
-export function  useAuthContext(){
+export function useAuthContext(){
   return useContext(AuthContext);
-} 
+}

@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from 'react'
+// Notification.js
+import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { requestForToken, onMessageListener } from '../firebase/firebase.config';
+import { requestForToken, onMessageListener } from './FirebaseMessaging';
 
 const Notification = () => {
-  const [notification, setNotification] = useState({title: '', body: ''});
-  const notify = () =>  toast(<ToastDisplay/>);
+  const [notification, setNotification] = useState({ title: '', body: '' });
+
+  const notify = () => toast(<ToastDisplay />);
+
   function ToastDisplay() {
     return (
       <div>
@@ -15,22 +18,20 @@ const Notification = () => {
   };
 
   useEffect(() => {
-    if (notification?.title ){
-     notify()
-    }
-  }, [notification])
+    requestForToken();
 
-  requestForToken();
+    onMessageListener()
+      .then((payload) => {
+        setNotification({ title: payload?.notification?.title, body: payload?.notification?.body });
+        notify();
+      })
+      .catch((err) => console.log('Failed: ', err));
 
-  onMessageListener()
-    .then((payload) => {
-      setNotification({title: payload?.notification?.title, body: payload?.notification?.body});     
-    })
-    .catch((err) => console.log('failed: ', err));
+  }, []);
 
   return (
-     <Toaster/>
-  )
-}
+    <Toaster />
+  );
+};
 
 export default Notification;
