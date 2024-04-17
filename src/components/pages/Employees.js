@@ -1,6 +1,6 @@
 
 import React,{useState} from 'react';
-import "./Services.css";
+import "./Employees.css";
 import photo from "../../assets/image/photo.jpg";
 import photo1 from "../../assets/image/photo1.jpg";
 import photo2 from "../../assets/image/photo2.jpg";

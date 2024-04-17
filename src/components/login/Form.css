@@ -105,12 +105,12 @@
     width:120px;
     height:36px;
     margin: auto;
-    padding-top: 10px;
+    padding-top:6px;
     padding-left: 20px;
   }
   .login {
     width:100px;
-    height:28px;
+    height:26px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -127,7 +127,10 @@
     background-color: #09b300;
     color:black;
   }
-
+.account{
+  width:285px;
+  height:22px;
+}
   .sign-up {
    width:280px;
    height:22px;
@@ -135,7 +138,7 @@
     display:inline;
     padding-left:8px;
     color:red;
-    margin-left:80px;
+    margin-left:60px;
 
   }
   
@@ -151,32 +154,22 @@
     color:blue;
     text-decoration: none;
   }
-  
-  .social-media-icons {
-    margin-top:10px;
-    width:100%;
-    height:35px;
- 
+  .google_{
+    width:220px;
+    height:30px;
+    margin: auto;
   }
-  
-  ul{
-    list-style: none;
-   text-align: center;
-  }
-  ul li{
-    display: inline;
-   
-  }
-  .social-media-icons i {
-    font-size: 24px;
-    margin:0 12px;
+  .google{
+    width:200px;
+    height:28px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size:16px;
+    text-transform: capitalize;
+    text-align: left;
     color:green;
-    height:26px;
+    
+    
   }
-  .social-media-icons i:hover {
-    color:red;
-  }
-  
-  
-
-  

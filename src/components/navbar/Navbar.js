@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/image/leber.png";
-
 import "./Navbar.css";
 
 const Navbar = () => {
-
+ 
+const navigate =useNavigate();
+ 
+const handleClick=()=>{
+  navigate("/SignUp")
+}
   return (
     <div className="topbar">
         <div className="logo">
@@ -41,7 +45,7 @@ const Navbar = () => {
         <input type="text" placeholder="Search..."/>
         <button className="search-btn">Search</button>
       </div>
-      <button className="login-btn"><span></span>Login</button>
+      <button className="login-btn" onClick={handleClick}><span></span>Login</button>
       </div>
    </div>
   );

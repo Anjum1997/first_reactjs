@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
+import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import logo1 from "../../assets/image/logo.png";
+
 
 const initialValues = {
   name: "",
@@ -13,16 +15,27 @@ const initialValues = {
 };
 
 const SignUp = () => {
+  const {signup} = useAuthContext();
+  const navigate =useNavigate();
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
       validationSchema: userSchema,
-      onSubmit: (values, action) => {
-      
-        action.resetForm();
-      },
+      onSubmit: async (values) => {
+        try {
+         
+          await signup(values.email, values.password);
+          navigate("/SignIn")
+         
+        } catch (error) {
+          console.error("Error signing up:", error);
+      }
+    }
     });
-  console.log(errors);
+
+
+
 
   return (
     <>
@@ -111,12 +124,13 @@ const SignUp = () => {
                     </Link>
                     </div>
                     <div className="but">
-                    <button className="login" type="submit">
+                    <button className="login" type="submit" >
                     SignUp
                     </button>
                     </div>
                   </div>
                 </form>
+              
                 <p className="sign-up">
                   Already have an account? <Link to ="/SignIn">Sign In now</Link>
                 </p>

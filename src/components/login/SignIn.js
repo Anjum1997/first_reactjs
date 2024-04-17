@@ -1,8 +1,10 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema";
+ import { useAuthContext } from "../context/AuthContext";
+
 import './Form.css';
 import logo1 from "../../assets/image/logo.png";
 
@@ -14,16 +16,42 @@ const initialValues = {
 };
 
 const SignIn = () => {
+  const { signin , googleSignIn} = useAuthContext();
+const navigate = useNavigate();
+
+
+   const handleEmailPasswordSignIn = async ( e, values) => {
+    e.preventDefault();
+    
+    try {
+      await signin(values.email, values.password);
+      
+      navigate("/Home"); 
+      
+    } catch (error) {
+      console.error("Error signing in with email and password:", error);
+    }
+  };
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/Home");
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+  };
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
       validationSchema: userSchema,
-      onSubmit: (values, action) => {
-      
-        action.resetForm();
+      onSubmit: (values) => {
+        handleEmailPasswordSignIn(values);
       },
     });
-  console.log(errors);
+
 
   return (
     <>
@@ -94,21 +122,18 @@ const SignIn = () => {
         <div className="forgot-password">
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
-        <div className="social-media-icons">
-          <ul>
-            <li><i className="fab fa-facebook"></i></li>
-         <li> <i className="fab fa-twitter"></i></li> 
-          <li><i className="fab fa-google"></i></li> 
-       <li>  <i className="fa-brands fa-linkedin"></i></li>
-       </ul>
-        </div>
         <div className="but">
           <button type="submit" className="login" >SignIN</button> 
         </div>
-        <p className="sign-up">
+     </form>
+     <div className="google_">
+     <button type="button"  className ="google" onClick={handleGoogleSignIn}>Sign in with Google</button>
+     </div>
+     <div className="account">
+     <p className="sign-up">
                   Don't have an account? <Link to="/SignUp">SignUp  now</Link>
                 </p>
-     </form>
+               </div>
     </div>
     </div>
     </>
