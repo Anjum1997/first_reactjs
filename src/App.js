@@ -1,5 +1,5 @@
 
-import React,{useEffect} from 'react';
+import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import Layout from "./layout/Layout.js";
 import Home from "./components/router/Home.js";
@@ -33,7 +33,7 @@ import Notification from './components/firebase/Notification.js';
 <Route path="/services" element={<Services />} />
 <Route path="/product" element={<Product />} />
 <Route path="/signup" element={<SignUp />} />
-<Route path="signin" element={<SignIn />} />
+<Route path="/signin" element={<SignIn />} />
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 

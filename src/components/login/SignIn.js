@@ -7,6 +7,8 @@ import './Form.css';
 import logo1 from "../../assets/image/logo.png"; 
 
 
+
+
 const initialValues = {
   email: "",
   password: "",
@@ -22,7 +24,7 @@ const SignIn = () => {
   const handleEmailPasswordSignIn = async (values) => {
     try {
       await signinWithEmailPassword(values.email, values.password);
-      navigate('/Home');
+      navigate('/');
     } catch (error) {
       setFormError(error.message);
     }
@@ -110,12 +112,12 @@ const SignIn = () => {
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
         <div className="but">
-          <button type="submit" className="login" >SignIN</button> 
+          <button  className="login" type="submit">SignIN</button> 
         </div>
      </form>
      <div className="google_">
      
-      <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
+     <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
         {error && <p>{error}</p>}
      </div>
      <div className="account">
