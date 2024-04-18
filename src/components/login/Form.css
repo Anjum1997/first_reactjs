@@ -90,27 +90,19 @@
     justify-items: center;
     align-items: center;
     width:100%;
-    height:56px;
+    height:36px;
   }
-  .mail  {
-    text-align: center;
-    width:100%;
-    height:18px;
-  }
-  .mail a{
-    color: rgb(12, 127, 35);
-    font-size: 14px;
-  }
+  
   .but{
     width:120px;
-    height:36px;
+    height:30px;
     margin: auto;
     padding-top:6px;
     padding-left: 20px;
   }
   .login {
     width:100px;
-    height:26px;
+    height:24px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -137,6 +129,7 @@
     font-size: 14px;
     display:inline;
     padding-left:8px;
+    padding-top:4px;
     color:red;
     margin-left:60px;
 
@@ -155,20 +148,25 @@
     text-decoration: none;
   }
   .google_{
-    width:220px;
-    height:30px;
+    width:240px;
+    height:34px;
     text-align:center;
-    margin: auto;
+  padding-top:6px;
+    margin:auto;
   
   }
   .google{
     width:200px;
-    height:28px;
-    border: none;
+    height:30px;
+    border: 2px solid red;
     border-radius: 3px;
     cursor: pointer;
     font-weight: bolder;
     font-size:16px;
     text-transform: capitalize;
+    background: transparent;
+    color:green;
+    text-align: right;
+    padding-bottom: 4px;
     
   }

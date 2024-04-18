@@ -110,9 +110,6 @@ const SignUp = () => {
               ) : null}
             </div>
             <div className="modal-buttons">
-              <div className="mail">
-                <Link to="/Gmail">Want to signup using Gmail?</Link>
-              </div>
               <div className="but">
                 <button className="login" type="submit">SignUp</button>
               </div>

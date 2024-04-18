@@ -4,7 +4,8 @@ import { useFormik } from "formik";
 import { userSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
-import logo1 from "../../assets/image/logo.png";
+import logo1 from "../../assets/image/logo.png"; 
+
 
 const initialValues = {
   email: "",
@@ -113,7 +114,8 @@ const SignIn = () => {
         </div>
      </form>
      <div className="google_">
-     <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
+     
+      <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
         {error && <p>{error}</p>}
      </div>
      <div className="account">
