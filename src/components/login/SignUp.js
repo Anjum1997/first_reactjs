@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { userSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
-import logo from "../../assets/image/imagelogo.png";
+import icon from "../../assets/image/form-icon.jpg";
 
 const initialValues = {
   name: "",
@@ -42,7 +42,7 @@ console.log(values);
    
         <div className="modal">
           <div className="modal_">
-            <img src={logo} alt="Logo" className="log" /> 
+            <img src={icon} alt="Logo" className="log" /> 
             <h2>SignUp</h2>
           </div>
           <form onSubmit={handleSubmit}>
