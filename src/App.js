@@ -8,10 +8,6 @@ import Contact from "./components/router/Contact.js";
 import Services from "./components/router/Services.js";
 import Product from "./components/router/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
-// import SliderImages from "./components/slider/SliderImages.js";
-// import HeaderSlider from './components/slider/HeaderSlider.js';
-// import  Profile from "./layout/Profile.js" 
-// import UserState from "./components/context/UserStatie.js";
 import SignIn from './components/login/SignIn.js';
 import SignUp from './components/login/SignUp.js';
 import Notification from './components/firebase/Notification.js';

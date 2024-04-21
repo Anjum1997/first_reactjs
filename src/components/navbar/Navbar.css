@@ -8,7 +8,7 @@
    margin:auto;
 }
 .logo{
-    width:300px;
+    width:240px;
     height:45px;
 }
 .logo_{
@@ -19,7 +19,7 @@
     
 }
 .list{
-    width:920px;
+    width:950px;
     height:45px;
     display: flex;
 }
@@ -63,27 +63,6 @@ nav ul li a{
 nav ul li a:hover{
     color:green
 }
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: #a26969;
-  padding: 0px;
-}
-
-.submenu li {
-  display: block;
-}
-
-.submenu li a {
-  color: green;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
-.submenu.show {
-  display: block;
-}
-
 .search-bar {
     display: flex;
     justify-content: right;

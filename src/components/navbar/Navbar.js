@@ -1,15 +1,47 @@
-import React from 'react';
+import React  from 'react';
 import { Link, useNavigate} from "react-router-dom";
-import logo from "../../assets/image/leber.png";
+import logo from "../../assets/image/imagelogo.png";
+// import { useAuthContext } from '../context/AuthContext';
+// import {auth} from "../firebase/firebase.config";
+// import SignUp from '../';
+// import SignIn from '../SignIn'; 
 import "./Navbar.css";
 
 const Navbar = () => {
- 
-const navigate =useNavigate();
- 
-const handleClick=()=>{
-  navigate("/SignUp")
-}
+  // const { user, signout } = useAuthContext();
+  // const [isSignupOpen, setIsSignupOpen] = useState(false);
+  // const [isSignInOpen, setIsSignInOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick =() =>{
+    navigate("/SignUp");
+  }
+//  const openSignupForm = () => {
+//   setIsSignupOpen(true);
+// };
+// 
+// const closeSignupForm = () => {
+//   setIsSignupOpen(false);
+// };
+// 
+// const openSignInForm = () => {
+//   setIsSignInOpen(true);
+// };
+// 
+// const closeSignInForm = () => {
+//   setIsSignInOpen(false);
+// };
+// 
+// const handleLoginButtonClick = () => {
+//   if (user) {
+//     signout();
+//   } else {
+//     openSignInForm();
+//   }
+// };
+
+
   return (
     <div className="topbar">
         <div className="logo">
@@ -32,10 +64,7 @@ const handleClick=()=>{
           </li>
           <li>
             <Link to="/product">Product</Link> 
-            <ul className="submenu">
-            <li><Link to="/product/Product_Card">ProductCard</Link></li>
-            <li><Link to ="/product/Producrt_List">ProductList</Link></li>
-          </ul>
+           
           </li>
          
         </ul>
@@ -45,8 +74,12 @@ const handleClick=()=>{
         <input type="text" placeholder="Search..."/>
         <button className="search-btn">Search</button>
       </div>
-      <button className="login-btn" onClick={handleClick}><span></span>Login</button>
+    <button className="login-btn" onClick={handleClick}><span></span>login
+          {/* {user ? 'Logout' : 'Login'} */}
+        </button>
       </div>
+      {/* {isSignupOpen && <SignUp onClose={closeSignupForm} />}
+      {isSignInOpen && <SignIn onClose={closeSignInForm} />} */}
    </div>
   );
 };

@@ -4,8 +4,7 @@ import { useFormik } from "formik";
 import { userSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
-import logo1 from "../../assets/image/logo.png"; 
-
+import logo from "../../assets/image/imagelogo.png"; 
 
 
 
@@ -18,8 +17,9 @@ const initialValues = {
 
 const SignIn = () => {
   const { signinWithEmailPassword, signinWithGoogle, error } = useAuthContext();
-  const navigate = useNavigate();
   const [formError, setFormError] = useState(null);
+  const navigate = useNavigate();
+ 
 
   const handleEmailPasswordSignIn = async (values) => {
     try {
@@ -28,6 +28,7 @@ const SignIn = () => {
     } catch (error) {
       setFormError(error.message);
     }
+    console.log(values)
   };
 
   const handleGoogleSignIn = async () => {
@@ -39,6 +40,7 @@ const SignIn = () => {
     }
   };
 
+  
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -50,10 +52,10 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="modal-container">
+      
         <div className="modal">
           <div className="modal_">
-            <img src={logo1} alt="Logo" className="log" />
+            <img src={logo} alt="Logo" className="log" />
             <h2>Login</h2>
           </div>
           <form onSubmit={handleSubmit}>
@@ -129,7 +131,7 @@ const SignIn = () => {
           {error && <p className="form-error">{error}</p>}
        
                </div>
-    </div>
+    
 
    
     </>

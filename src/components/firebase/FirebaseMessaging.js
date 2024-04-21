@@ -5,10 +5,10 @@ import { messaging } from "../firebase/firebase.config";
 export const requestForToken = async () => {
   try {
     const currentToken = await getToken(messaging, { 
-      vapidKey: 'BItbCr47AbH9evUtfRJ11d9EbYSKmnjwRTuGgqH-lbF9_QXXuWQzVSN4sd6QuF-MfbTiOElJ_qErwzR961nPeoY' 
-    });
+      vapidKey:'BAmy4SUZia7NnOHch154SuERi62DBzRllnFQG_WlAoZb6GsZB2oFY81XDI3iu3pnMAuyZwfY5GvFMnJ_oMvE3zM'});
     if (currentToken) {
-      alert("allow Permissionsto be granted");
+      alert("allow Permissions to be granted");
+      console.log('FCM Token:',currentToken);
     } else {
       alert('No registration token available. Request permission to generate one.');
     }

@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { userSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
-import logo1 from "../../assets/image/logo.png";
+import logo from "../../assets/image/imagelogo.png";
 
 const initialValues = {
   name: "",
@@ -16,8 +16,8 @@ const initialValues = {
 
 const SignUp = () => {
   const { signupWithEmailPassword, error } = useAuthContext();
-  const navigate = useNavigate();
   const [formError, setFormError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSignUp = async (values) => {
     try {
@@ -36,13 +36,13 @@ const SignUp = () => {
         handleSignUp(values);
       },
     });
-
+console.log(values);
   return (
     <>
-      <div className="modal-container">
+   
         <div className="modal">
           <div className="modal_">
-            <img src={logo1} alt="Logo" className="log" /> 
+            <img src={logo} alt="Logo" className="log" /> 
             <h2>SignUp</h2>
           </div>
           <form onSubmit={handleSubmit}>
@@ -121,7 +121,7 @@ const SignUp = () => {
           {formError && <p className="form-error">{formError}</p>}
           {error && <p className="form-error">{error}</p>}
         </div>
-      </div>
+    
     </>
   );
 };

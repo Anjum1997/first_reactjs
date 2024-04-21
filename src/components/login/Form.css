@@ -1,18 +1,12 @@
 
-.modal-container {
-       width:380px;
-       height:440px;
-       box-sizing: border-box;
-       margin:auto;
-       margin-top: 20px;
-       border: 3px solid darkgoldenrod;
-}
+
      .modal{
-       width: 100%;
-       height:100%;
-       border-radius: 10px;
-       overflow: hidden;
-       background: #fff;
+      width:380px;
+      height:440px;
+      box-sizing: border-box;
+      margin:auto;
+      margin-top: 20px;
+      border: 3px solid darkgoldenrod;
      }
 
      .modal_{
@@ -21,7 +15,7 @@
      }
      
   .log{
-    width:130px;
+    width:150px;
     height:40px;
     display: block;
     margin:15px auto 5px;
