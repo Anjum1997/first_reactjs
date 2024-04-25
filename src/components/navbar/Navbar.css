@@ -32,7 +32,7 @@ nav ul{
 }
 nav ul li{
   margin-left:15px;
-   display:inline-block;
+   display:inline;
    position: relative;
 }
 nav ul li:after{
@@ -121,3 +121,5 @@ input[type="text"] {
   .login-btn:hover{
     border:none;
   }
+
+  

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Community.css";
 
-const Home = () => {
+const Community = () => {
   return (
     <>
    <div className="section1">
@@ -69,4 +69,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Community;

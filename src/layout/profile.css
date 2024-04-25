@@ -1,4 +1,4 @@
- h3{
+ /* h3{
     font-size:18px;
     color:red;
     width:234px;
@@ -10,4 +10,171 @@ button{
     height:60px;
     color:brown;
     background-color:aquamarine;
+} */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+ /* Slider */
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  /* Slides */
+  .slide {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/image/office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+ 
+  .overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+
+  
+  .prev-arrow,
+  .next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    z-index:1;
+  }
+  
+  .prev-arrow {
+    left: 10px;
+  }
+  
+  .next-arrow {
+    right: 10px;
+  }
+  
+  .prev-arrow:hover,
+  .next-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  /* Dots */
+  .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  .slick-dots li button {
+    font-size: 10px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .slick-dots li button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+.content{
+    width:1200px;
+    height:500px;
+}
+.text1{
+  width:600px;
+  height:480px;
+ position: relative;
+}
+.heading{
+    width:500px;
+    height:80px;
+    position:absolute;
+    top:180px;
+    left:130px;
+} 
+.heading h1{
+    width:450px;
+    height:75;
+    font-size:30px;
+    font-weight: 900;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-transform: capitalize;
+   color:deeppink;
+}
+.heading h1:hover{
+ color:rgb(182, 174, 174);
+}
+.para{
+    width:500px; 
+    height:75px;
+    position:absolute;
+    top:275px;
+    left:155px;
+}
+.para p{
+    width:600px;
+    height:70px;
+    font-size:16px; 
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-transform: capitalize;
+   color:darkorange;
+   line-height:20px;
+}
+.para p:hover{
+    color:rgb(154, 69, 8);
+}
+.btn_{
+     width:160px;
+    height:45px;
+    position:absolute;
+    top:360px;
+    left:175px; 
+
+}
+.begin{
+    width:150px;
+    height:40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size:16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-weight: bolder;
+    color:white;
+   background-color:red;
+    transition:linear .5s ease-in-out;
+
+}
+.begin:hover{
+    color:red;
+    background-color:#00ff6e;
 }

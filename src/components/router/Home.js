@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { useAuthContext } from '../context/AuthContext';
 
@@ -11,8 +9,10 @@ const Home = () => {
       <h2>Profile Page</h2>
       {user && (
         <div>
-            {user.photoURL && (
+          {user.photoURL ? (
             <img src={user.photoURL} alt="User Profile" style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
+          ) : (
+            <div>No profile photo available</div>
           )}
           <p>Name: {user.displayName}</p>
           <p>Email: {user.email}</p>

@@ -1,45 +1,29 @@
 import React  from 'react';
 import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/image/imagelogo.png";
-// import { useAuthContext } from '../context/AuthContext';
-// import {auth} from "../firebase/firebase.config";
-// import SignUp from '../';
-// import SignIn from '../SignIn'; 
+ import { useAuthContext } from '../context/AuthContext';
 import "./Navbar.css";
 
 const Navbar = () => {
-  // const { user, signout } = useAuthContext();
-  // const [isSignupOpen, setIsSignupOpen] = useState(false);
-  // const [isSignInOpen, setIsSignInOpen] = useState(false);
-
+  const { user, signout, error } = useAuthContext();
   const navigate = useNavigate();
 
-  const handleClick =() =>{
-    navigate("/SignUp");
-  }
-//  const openSignupForm = () => {
-//   setIsSignupOpen(true);
-// };
-// 
-// const closeSignupForm = () => {
-//   setIsSignupOpen(false);
-// };
-// 
-// const openSignInForm = () => {
-//   setIsSignInOpen(true);
-// };
-// 
-// const closeSignInForm = () => {
-//   setIsSignInOpen(false);
-// };
-// 
-// const handleLoginButtonClick = () => {
-//   if (user) {
-//     signout();
-//   } else {
-//     openSignInForm();
-//   }
-// };
+  const handleButtonClick = () => {
+    if (user) {
+      handleSignOut();
+    } else {
+      navigate('/SignUp');
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signout();
+      navigate('/');
+    } catch (error) {
+      console.error('Sign-out Error:', error);
+    }
+  };
 
 
   return (
@@ -74,12 +58,10 @@ const Navbar = () => {
         <input type="text" placeholder="Search..."/>
         <button className="search-btn">Search</button>
       </div>
-    <button className="login-btn" onClick={handleClick}><span></span>login
-          {/* {user ? 'Logout' : 'Login'} */}
+      <button className="login-btn" onClick={handleButtonClick}><span></span>
+          {user ? 'Logout' : 'Signup'}
         </button>
       </div>
-      {/* {isSignupOpen && <SignUp onClose={closeSignupForm} />}
-      {isSignInOpen && <SignIn onClose={closeSignInForm} />} */}
    </div>
   );
 };

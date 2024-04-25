@@ -6,7 +6,7 @@ import photo1 from "../../assets/image/photo1.jpg";
 import photo2 from "../../assets/image/photo2.jpg";
 import photo3 from "../../assets/image/photo3.jpg";
 
-const Services = () => {
+const Employees = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   
@@ -107,4 +107,4 @@ const Services = () => {
   )
 }
 
-export default Services;
+export default Employees;

@@ -2,7 +2,7 @@
 import React from 'react';
 import "./Info.css";
 
-const Contact = () => {
+const Info = () => {
   return (
     <div className='section3'>
         <div className="header_">
@@ -53,4 +53,4 @@ const Contact = () => {
   );
 };
 
-export default Contact
+export default Info;

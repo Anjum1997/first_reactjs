@@ -11,7 +11,6 @@ import Employees from "../components/pages/Employees.js";
 
 
 
-
 const Layout = () => {
   return (
     <div>
@@ -24,6 +23,7 @@ const Layout = () => {
       <Employees />
       <Page />
       <Footer/>
+     
     
     </div>
   )

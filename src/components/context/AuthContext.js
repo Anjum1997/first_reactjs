@@ -20,64 +20,48 @@ export function AuthContextProvider({ children }) {
   });
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        localStorage.setItem('user', JSON.stringify(user));
-      } else {
-        setUser(null);
-        localStorage.removeItem('user');
-      }
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
 
 
-  const signinWithEmailPassword = async (email, password) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      setUser(userCredential.user);
-      localStorage.setItem('user', JSON.stringify(userCredential.user));
-      await saveUserDataToFirestore(userCredential.user);
+const signinWithEmailPassword = async (email, password) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    setUser(userCredential.user);
+    localStorage.setItem('user', JSON.stringify(userCredential.user));
+    await saveUserDataToFirestore(userCredential.user);
+  } catch (error) {
+    console.error('Error signing in with email and password:', error);
+    setError(error.message);
+    throw error;
+  }
+};
 
-    } catch (error) {
-      console.error('Error signing in with email and password:', error);
-      setError(error.message);
-      throw error;
-    }
-  };
+const signupWithEmailPassword = async (email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    setUser(userCredential.user);
+    localStorage.setItem('user', JSON.stringify(userCredential.user));
+    await saveUserDataToFirestore(userCredential.user);
+  } catch (error) {
+    console.error('Error signing up with email and password:', error);
+    setError(error.message);
+    throw error;
+  }
+};
 
-  const signupWithEmailPassword = async (email, password) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      setUser(userCredential.user);
-      localStorage.setItem('user', JSON.stringify(userCredential.user));
-      await saveUserDataToFirestore(userCredential.user);
+const signinWithGoogle = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+    const userCredential = await signInWithPopup(auth, provider);
+    setUser(userCredential.user);
+    localStorage.setItem('user', JSON.stringify(userCredential.user));
+    await saveUserDataToFirestore(userCredential.user);
+  } catch (error) {
+    console.error('Error signing in with Google:', error);
+    setError(error.message);
+    throw error;
+  }
+};
 
-    } catch (error) {
-      console.error('Error signing up with email and password:', error);
-      setError(error.message);
-      throw error;
-    }
-  };
-
-  const signinWithGoogle = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const userCredential = await signInWithPopup(auth, provider);
-      setUser(userCredential.user);
-      localStorage.setItem('user', JSON.stringify(userCredential.user));
-      await saveUserDataToFirestore(userCredential.user);
-    } catch (error) {
-      console.error('Error signing in with Google:', error);
-      setError(error.message);
-      throw error;
-    }
-  };
 
   const signout = async () => {
     try {
@@ -100,6 +84,23 @@ export function AuthContextProvider({ children }) {
       throw error;
     }
   };
+
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        localStorage.setItem('user', JSON.stringify(user));
+      } else {
+        setUser(null);
+        localStorage.removeItem('user');
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
   
 
   return (

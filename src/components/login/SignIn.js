@@ -5,6 +5,7 @@ import { userSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg"; 
+import googleIcon from "../../assets/image/google.png";
 
 
 
@@ -28,7 +29,7 @@ const SignIn = () => {
     } catch (error) {
       setFormError(error.message);
     }
-    console.log(values)
+   
   };
 
   const handleGoogleSignIn = async () => {
@@ -118,8 +119,10 @@ const SignIn = () => {
         </div>
      </form>
      <div className="google_">
-     
-     <button  className="google" onClick={handleGoogleSignIn}>Sign In with Google</button>
+     <button className="google" onClick={handleGoogleSignIn}>
+            <img src={googleIcon} alt="Google Icon" className="google-icon" />
+            Sign In with Google
+          </button>
         {error && <p>{error}</p>}
      </div>
      <div className="account">
