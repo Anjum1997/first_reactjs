@@ -5,7 +5,7 @@ import image2 from "../../assets/image/about-01.jpg";
 import image3 from "../../assets/image/about-02.jpg";
 
 
-const About  = () => { 
+const AboutCompany  = () => { 
    
   return  (
 
@@ -48,4 +48,4 @@ const About  = () => {
   );
 };
 
-export default About;
+export default AboutCompany;

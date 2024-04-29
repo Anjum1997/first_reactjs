@@ -10,6 +10,8 @@ import Product from "./components/router/Product.js";
 import NoPageFound from "./components/pages/NoPageFound.js";
 import SignIn from './components/login/SignIn.js';
 import SignUp from './components/login/SignUp.js';
+ import ForgotPassword from "./components/login/ForgotPassword.js";
+ import ResetPassword from "./components/login/ResetPassword.js";
 import Notification from './components/firebase/Notification.js';
 
 
@@ -30,6 +32,8 @@ import Notification from './components/firebase/Notification.js';
 <Route path="/product" element={<Product />} />
 <Route path="/signup" element={<SignUp />} />
 <Route path="/signin" element={<SignIn />} />
+<Route path="/forgot-password" element={<ForgotPassword />} />
+ <Route path="/reset-password/:token" element={<ResetPassword />} /> 
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 

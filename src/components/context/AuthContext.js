@@ -4,7 +4,9 @@ import { createUserWithEmailAndPassword,
     onAuthStateChanged,
      signOut,
       GoogleAuthProvider,
-       signInWithPopup
+       signInWithPopup,
+       sendPasswordResetEmail, 
+       confirmPasswordReset,
        } from 'firebase/auth';
 import { auth } from '../firebase/firebase.config';
 import { addDoc, collection} from 'firebase/firestore';
@@ -73,7 +75,8 @@ const signinWithGoogle = async () => {
       setError(error.message);
       throw error;
     }
-  };const saveUserDataToFirestore = async (user) => {
+  };
+  const saveUserDataToFirestore = async (user) => {
     try {
       const usersCollection = collection(firestore, 'users');
       await addDoc(usersCollection, { email: user.email });
@@ -85,7 +88,27 @@ const signinWithGoogle = async () => {
     }
   };
 
-  
+  const sendPasswordResetEmailFunc = async (email) => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      console.log('Password reset email sent successfully');
+    } catch (error) {
+      console.error('Error sending password reset email:', error);
+      setError(error.message);
+      throw error;
+    }
+  };
+
+  const resetPasswordWithToken = async (token, newPassword) => {
+    try {
+      await confirmPasswordReset(auth, token, newPassword);
+      console.log('Password reset successfully');
+    } catch (error) {
+      console.error('Error resetting password:', error);
+      setError(error.message);
+      throw error;
+    }
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -104,7 +127,7 @@ const signinWithGoogle = async () => {
   
 
   return (
-    <AuthContext.Provider value={{ user, error, signinWithEmailPassword, signupWithEmailPassword, signinWithGoogle, signout }}>
+    <AuthContext.Provider value={{ user, error, signinWithEmailPassword, signupWithEmailPassword, signinWithGoogle, signout ,sendPasswordResetEmail: sendPasswordResetEmailFunc, resetPasswordWithToken }}>
       {children}
     </AuthContext.Provider>
   );
