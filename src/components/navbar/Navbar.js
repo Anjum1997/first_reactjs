@@ -1,13 +1,12 @@
 import React  from 'react';
 import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/image/imagelogo.png";
- import { useAuthContext } from '../context/AuthContext';
+import { useAuthContext } from "../context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { user, signout, error } = useAuthContext();
-  const navigate = useNavigate();
-
+  const { user, signout} = useAuthContext();
+ const navigate = useNavigate();
   const handleButtonClick = () => {
     if (user) {
       handleSignOut();

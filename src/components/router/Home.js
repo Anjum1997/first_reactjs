@@ -5,12 +5,12 @@ const Home = () => {
   const { user } = useAuthContext();
 
   return (
-    <div>
+    <div  style ={{width:"400px",height:"250px" ,margin:"auto",paddingTop:"30px"}} >
       <h2>Profile Page</h2>
       {user && (
-        <div>
+        <div style ={{textAlign:"center",color:"green",fontSize:"20px"}}>
           {user.photoURL ? (
-            <img src={user.photoURL} alt="User Profile" style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
+            <img src={user.photoURL} alt="User Profile" style={{ width: '200px', height: '200px', borderRadius: '50%' }} />
           ) : (
             <div>No profile photo available</div>
           )}

@@ -23,7 +23,6 @@ const ContactPage = () => {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    // Handle form submission logic here
     console.log(values);
     setSubmitting(false);
   };

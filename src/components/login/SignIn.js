@@ -25,7 +25,7 @@ const SignIn = () => {
   const handleEmailPasswordSignIn = async (values) => {
     try {
       await signinWithEmailPassword(values.email, values.password);
-      navigate( '/' );
+      navigate("/");
     } catch (error) {
       setFormError(error.message);
     }
