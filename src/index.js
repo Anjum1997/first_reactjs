@@ -19,7 +19,6 @@ root.render(
         <BrowserRouter>
         <App />
         </BrowserRouter>
-    
       </AuthContextProvider>
       </Provider>
  

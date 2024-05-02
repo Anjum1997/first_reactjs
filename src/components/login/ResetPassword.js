@@ -14,7 +14,7 @@ const ResetPassword = () => {
   const handleResetPassword = async (values) => {
     try {
       await resetPasswordWithToken(token, values.password);
-      navigate('/SignIn'); 
+      navigate('/signin'); 
     } catch (error) {
       setFormError(error.message);
     }
@@ -33,11 +33,10 @@ const ResetPassword = () => {
     });
 
   return (
-    <div className="modal">
-      <div className="modal_">
+    
+        
+      <form className ="r-password" onSubmit={handleSubmit}>
         <h2>Reset Password</h2>
-      </div>
-      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>New Password:</label>
           <input
@@ -69,12 +68,11 @@ const ResetPassword = () => {
           ) : null}
         </div>
         <div className="but">
-          <button className="login" type="submit">Reset Password</button>
+          <button className="login" type="submit">Reset</button>
         </div>
-      </form>
       {formError && <p className="form-error">{formError}</p>}
       {error && <p className="form-error">{error}</p>}
-    </div>
+  </form>
   );
 };
 

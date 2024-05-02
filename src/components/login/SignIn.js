@@ -12,7 +12,7 @@ import googleIcon from "../../assets/image/google.png";
 const initialValues = {
   email: "",
   password: "",
-  confirm_password:"",
+ 
 
 };
 
@@ -22,22 +22,23 @@ const SignIn = () => {
   const navigate = useNavigate();
  
 
-  const handleEmailPasswordSignIn = async (values) => {
+  const handleSignIn = async (values) => {
     try {
-      await signinWithEmailPassword(values.email, values.password);
-      navigate("/");
+       await signinWithEmailPassword(values.email, values.password);
+      navigate('/');
     } catch (error) {
       setFormError(error.message);
+     
     }
-   
   };
 
   const handleGoogleSignIn = async () => {
     try {
-      await signinWithGoogle();
-      navigate('/Home');
+     await signinWithGoogle();
+      navigate('/home');
     } catch (error) {
       setFormError(error.message);
+     
     }
   };
 
@@ -47,7 +48,7 @@ const SignIn = () => {
       initialValues,
       validationSchema: userSchema,
       onSubmit: (values) => {
-        handleEmailPasswordSignIn(values);
+        handleSignIn(values);
       },
     });
 
@@ -92,27 +93,9 @@ const SignIn = () => {
                 <p className="form-error">{errors.password}</p>
               ) : null}
             </div>
-               <div className="form-group">
-                    <label>
-                      Confirm Password:
-                    </label>
-                    <input
-                      type="password"
-                      autoComplete="off"
-                      name="confirm_password"
-                      id="confirm_password"
-                      value={values.confirm_password}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                     <i className=" fas fa-eye-slash"></i> 
-                    {errors.confirm_password && touched.confirm_password ? (
-                      <p className="form-error">{errors.confirm_password}</p>
-                    ) : null}
-                     
-                  </div>
+            
         <div className="forgot-password">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forgotpassword">Forgot Password?</Link>
         </div>
         <div className="but">
           <button  className="login" type="submit">SignIN</button> 
@@ -127,7 +110,7 @@ const SignIn = () => {
      </div>
      <div className="account">
      <p className="sign-up">
-                  Don't have an account? <Link to="/SignUp">SignUp  now</Link>
+                  Don't have an account? <Link to="/signup">SignUp  now</Link>
                 </p>
                 </div>
                 {formError && <p className="form-error">{formError}</p>}

@@ -4,20 +4,23 @@ import logo from "../../assets/image/imagelogo.png";
 import { useAuthContext } from "../context/AuthContext";
 import "./Navbar.css";
 
+
 const Navbar = () => {
-  const { user, signout} = useAuthContext();
+  const { user ,signout} = useAuthContext();
  const navigate = useNavigate();
+
   const handleButtonClick = () => {
     if (user) {
       handleSignOut();
     } else {
-      navigate('/SignUp');
+      navigate('/signup');
     }
   };
 
   const handleSignOut = async () => {
     try {
       await signout();
+
       navigate('/');
     } catch (error) {
       console.error('Sign-out Error:', error);

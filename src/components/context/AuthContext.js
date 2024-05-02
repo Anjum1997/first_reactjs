@@ -1,20 +1,39 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, confirmPasswordReset } from 'firebase/auth';
+import { createUserWithEmailAndPassword,
+   signInWithEmailAndPassword,
+    onAuthStateChanged, 
+    signOut,
+     GoogleAuthProvider,
+      signInWithPopup,
+       sendPasswordResetEmail, 
+       confirmPasswordReset
+       } from 'firebase/auth';
 import { auth } from '../firebase/firebase.config';
 import { addDoc, collection } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase.config';
-import { signupSuccess, signupFailure, loginSuccess, loginFailure, logoutSuccess, logoutFailure, resetPasswordSuccess, resetPasswordFailure, sendPasswordResetEmailSuccess, sendPasswordResetEmailFailure } from '../../redux/actions/authActions'; 
+import { signupSuccess, 
+  signupFailure,
+   loginSuccess,
+    loginFailure,
+     logoutSuccess,
+      logoutFailure,
+       resetPasswordSuccess,
+        resetPasswordFailure, 
+        sendPasswordResetEmailSuccess,
+         sendPasswordResetEmailFailure
+         } from '../../redux/actions/authActions'; 
 import { useDispatch} from 'react-redux';
 
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
+  const dispatch = useDispatch();
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
   });
   const [error, setError] = useState(null);
-  const dispatch = useDispatch();
+ 
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -42,8 +61,7 @@ export function AuthContextProvider({ children }) {
     } catch (error) {
       console.error('Error signing up with email and password:', error);
       setError(error.message);
-      signupFailure(error.message);
-      throw error;
+     dispatch( signupFailure(error.message));
     }
   };
 
@@ -57,8 +75,7 @@ export function AuthContextProvider({ children }) {
     } catch (error) {
       console.error('Error signing in with email and password:', error);
       setError(error.message);
-      loginFailure(error.message); 
-      throw error;
+     dispatch (loginFailure(error.message)); 
     }
   };
 
@@ -69,12 +86,12 @@ export function AuthContextProvider({ children }) {
       setUser(userCredential.user);
       localStorage.setItem('user', JSON.stringify(userCredential.user));
       await saveUserDataToFirestore(userCredential.user);
-      loginSuccess(userCredential.user); 
+     dispatch( loginSuccess(userCredential.user));
     } catch (error) {
       console.error('Error signing in with Google:', error);
       setError(error.message);
      dispatch( loginFailure(error.message)); 
-      throw error;
+   
     }
   };
 
@@ -88,7 +105,7 @@ export function AuthContextProvider({ children }) {
       console.error('Error signing out:', error);
       setError(error.message);
      dispatch (logoutFailure(error.message)); 
-      throw error;
+    
     }
   };
 
@@ -100,7 +117,7 @@ export function AuthContextProvider({ children }) {
     } catch (error) {
       console.error('Error saving user data to Firestore:', error);
       setError(error.message);
-      throw error;
+   
     }
   };
 
@@ -113,7 +130,7 @@ export function AuthContextProvider({ children }) {
       console.error('Error sending password reset email:', error);
       setError(error.message);
      dispatch( sendPasswordResetEmailFailure(error.message)); 
-      throw error;
+   
     }
   };
 
@@ -126,7 +143,7 @@ export function AuthContextProvider({ children }) {
       console.error('Error resetting password:', error);
       setError(error.message);
      dispatch( resetPasswordFailure(error.message)); 
-      throw error;
+   
     }
   };
 

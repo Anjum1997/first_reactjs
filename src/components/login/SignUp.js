@@ -7,6 +7,7 @@ import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
 
+
 const initialValues = {
   name: "",
   email: "",
@@ -15,28 +16,32 @@ const initialValues = {
 };
 
 const SignUp = () => {
-  const { signupWithEmailPassword, error } = useAuthContext();
+  const { signupWithEmailPassword ,error } = useAuthContext();
   const [formError, setFormError] = useState(null);
   const navigate = useNavigate();
 
+
   const handleSignUp = async (values) => {
     try {
-      await signupWithEmailPassword(values.email, values.password);
-      navigate('/SignIn');
+       await signupWithEmailPassword(values.email, values.password);
+      
+      navigate('/signin');
     } catch (error) {
       setFormError(error.message);
+    
     }
   };
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
+      
       initialValues,
       validationSchema: userSchema,
       onSubmit: (values) => {
         handleSignUp(values);
       },
     });
-console.log(values);
+
   return (
     <>
    
@@ -116,7 +121,7 @@ console.log(values);
             </div>
           </form>
           <p className="sign-up">
-            Already have an account? <Link to="/SignIn">Sign In now</Link>
+            Already have an account? <Link to="/signin">Sign In now</Link>
           </p>
           {formError && <p className="form-error">{formError}</p>}
           {error && <p className="form-error">{error}</p>}

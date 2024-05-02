@@ -32,8 +32,8 @@ import Notification from './components/firebase/Notification.js';
 <Route path="/product" element={<Product />} />
 <Route path="/signup" element={<SignUp />} />
 <Route path="/signin" element={<SignIn />} />
-<Route path="/forgot-password" element={<ForgotPassword />} />
- <Route path="/reset-password/:token" element={<ResetPassword />} /> 
+<Route path="/forgotpassword" element={<ForgotPassword />} />
+ <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 
