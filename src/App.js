@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {Routes, Route} from "react-router-dom";
+import { AuthContextProvider } from "./components/context/AuthContext.js";
 import Layout from "./layout/Layout.js";
 import Home from "./components/router/Home.js";
 import About  from "./components/router/About.js";
@@ -21,8 +22,8 @@ import Notification from './components/firebase/Notification.js';
     
       
       return (
-          <div>
-      
+          <>
+  <AuthContextProvider>
 <Routes>
 <Route path="/"  element={<Layout />}  /> 
 <Route path="/home"  element={<Home />}  /> 
@@ -38,7 +39,8 @@ import Notification from './components/firebase/Notification.js';
 </Routes>
 
 <Notification />
-       </div>
+</AuthContextProvider>  
+       </>
       );
      };
 

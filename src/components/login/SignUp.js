@@ -24,7 +24,6 @@ const SignUp = () => {
   const handleSignUp = async (values) => {
     try {
        await signupWithEmailPassword(values.email, values.password);
-      
       navigate('/signin');
     } catch (error) {
       setFormError(error.message);
@@ -50,7 +49,7 @@ const SignUp = () => {
             <img src={icon} alt="Logo" className="log" /> 
             <h2>SignUp</h2>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form  className="form_" onSubmit={handleSubmit}>
             <div className="form-group">
               <label> Name:</label>
               <input

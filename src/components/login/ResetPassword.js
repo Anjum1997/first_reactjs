@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import { userSchema } from "./Schema"; 
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
+import icon from "../../assets/image/form-icon.jpg";
 
 const ResetPassword = () => {
   const { resetPasswordWithToken, error } = useAuthContext();
   const [formError, setFormError] = useState(null);
   const navigate = useNavigate();
   const { token } = useParams(); 
+
+
+
+  
+  useEffect(() => {
+    if (!token) {
+      navigate('/forgotpassword');
+    }
+  }, [token, navigate]);
 
   const handleResetPassword = async (values) => {
     try {
@@ -33,10 +43,13 @@ const ResetPassword = () => {
     });
 
   return (
-    
-        
-      <form className ="r-password" onSubmit={handleSubmit}>
-        <h2>Reset Password</h2>
+    <>
+    <div className="r-password">
+        <div className="modal_">
+        <img src={icon} alt="Logo" className="log" /> 
+        <h2> Reset Password</h2>
+      </div>
+      <form className ="form_r" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>New Password:</label>
           <input
@@ -73,6 +86,8 @@ const ResetPassword = () => {
       {formError && <p className="form-error">{formError}</p>}
       {error && <p className="form-error">{error}</p>}
   </form>
+  </div>
+  </>
   );
 };
 

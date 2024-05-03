@@ -4,6 +4,9 @@ import { useFormik } from "formik";
 import { userSchema } from "./Schema"; 
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
+import icon from "../../assets/image/form-icon.jpg";
+import { v4 as uuidv4 } from 'uuid'; 
+
 
 
 const ForgotPassword = () => {
@@ -12,9 +15,10 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
 
   const handleSendPasswordResetEmail = async (values) => {
-    try {
-      await sendPasswordResetEmail(values.email);
-      navigate("/resetpassword/:token");
+    try { 
+       const token = uuidv4(); 
+    await sendPasswordResetEmail(values.email, token);
+    navigate(`/resetpassword/${token}`);
     } catch (error) {
       setFormError(error.message);
     }
@@ -32,8 +36,13 @@ const ForgotPassword = () => {
     });
 
   return (
-      <form className="r-password" onSubmit={handleSubmit}>
-      <h2>Forgot Password</h2>
+    <>
+<div className="r-password">
+    <div className="modal_login">
+    <img src={icon} alt="Logo" className="log" /> 
+    <h2>Forgot Password</h2>
+  </div>
+      <form className="form_forget" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email:</label>
           <input
@@ -55,6 +64,8 @@ const ForgotPassword = () => {
       {formError && <p className="form-error">{formError}</p>}
       {error && <p className="form-error">{error}</p>}
     </form>
+    </div>
+    </>
   );
 };
 

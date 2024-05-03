@@ -56,11 +56,11 @@ const SignIn = () => {
     <>
       
         <div className="modal">
-          <div className="modal_">
+          <div className="modal_login">
             <img src={icon} alt="Logo" className="log" />
             <h2>Login</h2>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form  className="form_login" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Email:</label>
               <input

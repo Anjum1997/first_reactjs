@@ -1,72 +1,146 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import "./Contact.css";
 
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import { userSchema } from "../login/Schema";
+import "../login/Form.css";
+
+
+
+
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  address: '',
+  message: '',
+};
 const ContactPage = () => {
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    message: '',
-  };
-
-  const validationSchema = Yup.object({
-    firstName: Yup.string().required('First name is required'),
-    lastName: Yup.string().required('Last name is required'),
-    email: Yup.string().email('Invalid email address').required('Email is required'),
-    phone: Yup.string().required('Phone number is required'),
-    address: Yup.string().required('Address is required'),
-    message: Yup.string().required('Message is required'),
-  });
-
-  const handleSubmit = (values, { setSubmitting }) => {
-    console.log(values);
-    setSubmitting(false);
-  };
+    const [formError, setFormError] = useState(null);
+    const navigate = useNavigate();
+  
+  
+    const handleSend = async (values) => {
+      try {
+        navigate('/');
+      } catch (error) {
+        setFormError(error.message);
+      
+      }
+    };
+  
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+      useFormik({
+        
+        initialValues,
+        validationSchema: userSchema,
+        onSubmit: (values) => {
+          handleSend(values);
+        },
+      });
+  
 
   return (
-    <div>
+    <div  className="contact-form">
       <h2>Contact Us</h2>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-        {({ isSubmitting }) => (
-          <Form>
-            <div>
+      <form onSubmit={handleSubmit}>
+            <div className="form-group">
               <label htmlFor="firstName">First Name</label>
-              <Field type="text" name="firstName" />
-              <ErrorMessage name="firstName" component="div" className="error" />
+              <input
+                type="firstName"
+                autoComplete="off"
+                name="firstName"
+                id="firstName"
+                value={values.firstName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.firstName && touched.firstName ? (
+                <p className="form-error">{errors.firstName}</p>
+              ) : null}
             </div>
-            <div>
+            <div className="form-group">
               <label htmlFor="lastName">Last Name</label>
-              <Field type="text" name="lastName" />
-              <ErrorMessage name="lastName" component="div" className="error" />
+              <input
+                type="lastName"
+                autoComplete="off"
+                name="lastName"
+                id="lastName"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.lastName && touched.lastName ? (
+                <p className="form-error">{errors.lastName}</p>
+              ) : null}
             </div>
-            <div>
+            <div className="form-group">
               <label htmlFor="email">Email</label>
-              <Field type="email" name="email" />
-              <ErrorMessage name="email" component="div" className="error" />
+              <input
+                type="email"
+                autoComplete="off"
+                name="email"
+                id="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+             
+              {errors.email && touched.email ? (
+                <p className="form-error">{errors.email}</p>
+              ) : null}
             </div>
-            <div>
+            <div className="form-group">
               <label htmlFor="phone">Phone Number</label>
-              <Field type="text" name="phone" />
-              <ErrorMessage name="phone" component="div" className="error" />
+              <input
+                type="phone"
+                autoComplete="off"
+                name="phone"
+                id="phone"
+                value={values.phone}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.phone && touched.phone ? (
+                <p className="form-error">{errors.phone}</p>
+              ) : null}
             </div>
-            <div>
+            <div className="form-group">
               <label htmlFor="address">Address</label>
-              <Field type="text" name="address" />
-              <ErrorMessage name="address" component="div" className="error" />
+              <input
+                type="address"
+                autoComplete="off"
+                name="address"
+                id="address"
+                value={values.address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.address && touched.address ? (
+                <p className="form-error">{errors.address}</p>
+              ) : null}
             </div>
-            <div>
+            <div className="form-group">
               <label htmlFor="message">Message</label>
-              <Field as="textarea" name="message" />
-              <ErrorMessage name="message" component="div" className="error" />
+              <textarea
+                autoComplete="off"
+                name="message"
+                id="message"
+                value={values.message}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.message && touched.message ? (
+                <p className="form-error">{errors.message}</p>
+              ) : null}
             </div>
-            <button type="submit" disabled={isSubmitting}>Submit</button>
-          </Form>
-        )}
-      </Formik>
+            <div className="but">
+            <button type="submit" className="login">send</button>
+            </div>
+            {formError && <p className="form-error">{formError}</p>}
+       
+          </form>
     </div>
   );
 };

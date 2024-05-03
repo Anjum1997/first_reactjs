@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { createUserWithEmailAndPassword,
+import {
+   createUserWithEmailAndPassword,
    signInWithEmailAndPassword,
     onAuthStateChanged, 
     signOut,
@@ -27,13 +28,13 @@ import { useDispatch} from 'react-redux';
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const dispatch = useDispatch();
+ 
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
   });
   const [error, setError] = useState(null);
- 
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -148,7 +149,7 @@ export function AuthContextProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, signinWithEmailPassword, signupWithEmailPassword, signinWithGoogle, signout, sendPasswordResetEmail: sendPasswordResetEmailFunc, resetPasswordWithToken }}>
+    <AuthContext.Provider value={{ user, error,signupWithEmailPassword, signinWithEmailPassword, signinWithGoogle, signout, sendPasswordResetEmail: sendPasswordResetEmailFunc, resetPasswordWithToken }}>
       {children}
     </AuthContext.Provider>
   );
