@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { userSchema } from "./Schema";
+import {signupSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
@@ -35,7 +35,7 @@ const SignUp = () => {
     useFormik({
       
       initialValues,
-      validationSchema: userSchema,
+      validationSchema: signupSchema,
       onSubmit: (values) => {
         handleSignUp(values);
       },
@@ -51,7 +51,7 @@ const SignUp = () => {
           </div>
           <form  className="form_" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label> Name:</label>
+              <label htmlFor="name"> Name:</label>
               <input
                 type="name"
                 autoComplete="off"
@@ -66,7 +66,7 @@ const SignUp = () => {
               ) : null}
             </div>
             <div className="form-group">
-              <label>Email:</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 autoComplete="off"
@@ -82,7 +82,7 @@ const SignUp = () => {
               ) : null}
             </div>
             <div className="form-group">
-              <label>Password:</label>
+              <label htmlFor="password">Password:</label>
               <input
                 type="password"
                 autoComplete="off"
@@ -98,7 +98,7 @@ const SignUp = () => {
               ) : null}
             </div>
             <div className="form-group">
-              <label>Confirm Password:</label>
+              <label htmlFor="confirm_password">Confirm Password:</label>
               <input
                 type="password"
                 autoComplete="off"

@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
-import { userSchema } from "./Schema"; 
+import {  resetPasswordSchema } from "./Schema"; 
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
@@ -36,7 +36,7 @@ const ResetPassword = () => {
         password: "",
         confirm_password: "",
       },
-      validationSchema: userSchema.pick(['password', 'confirm_password']),
+      validationSchema: resetPasswordSchema.pick(['password', 'confirm_password']),
       onSubmit: (values) => {
         handleResetPassword(values);
       },
@@ -51,7 +51,7 @@ const ResetPassword = () => {
       </div>
       <form className ="form_r" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>New Password:</label>
+        <label htmlFor="password">New Password:</label>
           <input
             type="password"
             autoComplete="off"
@@ -66,7 +66,8 @@ const ResetPassword = () => {
           ) : null}
         </div>
         <div className="form-group">
-          <label>Confirm New Password:</label>
+      
+        <label htmlFor ="confirm_password">Confirm New Password:</label>
           <input
             type="password"
             autoComplete="off"

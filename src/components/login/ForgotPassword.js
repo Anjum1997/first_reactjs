@@ -1,7 +1,7 @@
 import React ,{useState}from "react";
 import {useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { userSchema } from "./Schema"; 
+import {forgotPasswordSchema } from "./Schema"; 
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
@@ -29,7 +29,7 @@ const ForgotPassword = () => {
       initialValues: {
         email: "",
       },
-      validationSchema: userSchema.pick(['email']),
+      validationSchema: forgotPasswordSchema.pick(['email']),
       onSubmit: (values) => {
         handleSendPasswordResetEmail(values);
       },
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
   </div>
       <form className="form_forget" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Email:</label>
+        <label htmlFor="email">Email:</label>
           <input
             type="email"
             autoComplete="off"

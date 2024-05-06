@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { userSchema } from "../login/Schema";
+import { contactSchema } from "../login/Schema";
 import "../login/Form.css";
 
 
@@ -21,7 +21,7 @@ const ContactPage = () => {
     const navigate = useNavigate();
   
   
-    const handleSend = async (values) => {
+    const handleSend = async () => {
       try {
         navigate('/');
       } catch (error) {
@@ -34,7 +34,7 @@ const ContactPage = () => {
       useFormik({
         
         initialValues,
-        validationSchema: userSchema,
+        validationSchema:contactSchema ,
         onSubmit: (values) => {
           handleSend(values);
         },
@@ -42,6 +42,8 @@ const ContactPage = () => {
   
 
   return (
+    <>
+    <div className="section-contact">
     <div  className="contact-form">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit}>
@@ -142,6 +144,8 @@ const ContactPage = () => {
        
           </form>
     </div>
+    </div>
+    </>
   );
 };
 
