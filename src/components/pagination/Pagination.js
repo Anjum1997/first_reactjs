@@ -1,10 +1,10 @@
 
 import React from 'react';
 
-function Pagination({ currentPage, totalPosts, postsPerPage, setCurrentPage }) {
+function Pagination({ currentPage, totalUsers, usersPerPage, setCurrentPage }) {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
     pageNumbers.push(i);
   }
 

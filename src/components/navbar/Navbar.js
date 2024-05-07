@@ -6,6 +6,7 @@ import "./Navbar.css";
 
 
 const Navbar = () => {
+ 
   const { user ,signout} = useAuthContext();
  const navigate = useNavigate();
 
@@ -57,12 +58,13 @@ const Navbar = () => {
       
       </nav>
       <div className="search-bar">
-        <input type="text" placeholder="Search..."/>
-        <button className="search-btn">Search</button>
-      </div>
       <button className="login-btn" onClick={handleButtonClick}><span></span>
           {user ? 'Logout' : 'Signup'}
         </button>
+        {/* <ul>
+        <li><Link to="/cart">Cart </Link></li>
+        </ul> */}
+       </div>
       </div>
    </div>
   );

@@ -4,7 +4,7 @@ import Table from './Table.js';
 import Pagination from './Pagination.js';
 
  const Page = ()=>{
-  const [posts ,setPosts] = useState([]);
+  const [users ,setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
  
 
@@ -17,8 +17,9 @@ import Pagination from './Pagination.js';
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(response.data);
+      const response = await axios.get("https://dummyjson.com/users");
+      console.log(response);
+      setUsers(response.data.users);
   
     
     } catch (error) {
@@ -26,24 +27,24 @@ import Pagination from './Pagination.js';
     }
   };
 
-  const postsPerPage =10;
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const usersPerPage =5;
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
   
-  const currentPosts = posts && posts.length > 0
-    ? posts.slice(indexOfFirstPost, indexOfLastPost)
+  const currentUsers = users && users.length > 0
+    ? users.slice(indexOfFirstUser, indexOfLastUser)
     : []
   ;  
   return (
     <div>
-      <h1 style={{textAlign:"center"}}>post Data</h1>
+      <h1 style={{textAlign:"center"}}>user Data</h1>
      
         <>
-          <Table posts={currentPosts} />
+          <Table users={currentUsers} />
           <Pagination
             currentPage={currentPage}
-            totalPosts={posts.length}
-            postsPerPage={postsPerPage}
+            totalPosts={users.length}
+            postsPerPage={usersPerPage}
             setCurrentPage={setCurrentPage}
           />
         </>

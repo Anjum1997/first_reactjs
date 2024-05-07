@@ -92,7 +92,7 @@ color:brown;
     padding-top:12px;
 }
 .para1{
-    color:black;
+    color:darkgoldenrod;
 font-size:16px;
 font-weight: 700;
 text-align: center;
@@ -100,7 +100,7 @@ text-transform: capitalize;
 z-index:2;
 }
 .para1:hover{
-    color:red;
+    color:white;
     }
 
 .part:after{

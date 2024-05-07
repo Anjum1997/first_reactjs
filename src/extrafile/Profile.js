@@ -1,6 +1,3 @@
-// import React, { useContext } from 'react'
-// import {FormContext} from "../components/context/UserContext";
-// import "./profile.css";
 
 
 import React from 'react';
@@ -69,40 +66,8 @@ const Profile = () => {
   )
 }
 
-
-
-
-
-
-// 
-//     const{ isLoggedIn, onLogin , onLogout }= useContext(FormContext);
-//   return (
-//     <div>
-//       <h3> user profile</h3>
-//       {isLoggedIn ? (
-// 
-//       <div>
-//       <p>welcome user!</p> 
-//       <button onClick={onLogout}>logout</button>
-//        </div>
-//         ):(
-//         <div>
-//       <p>welcome!</p> 
-//       <button onClick={onLogin}>login</button>
-//       </div>
-//        )};
-//    </div>
-//   );
-// };
-
 export default Profile;
 
-
-
-// 
-// //import React ,{useContext,useEffect} from 'react'
-// import "./header.css";
-// import UserContext from '../context/UserContext';
 
 // const Header = () => {
 //  

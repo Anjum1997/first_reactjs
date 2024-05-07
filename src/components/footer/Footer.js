@@ -1,6 +1,7 @@
 
  import React from 'react';
  import "./Footer.css";
+ import { Link } from 'react-router-dom';
  
  const Footer = () => {
      return (
@@ -23,11 +24,22 @@
    <div className="list_items">
        <h2>Quick Links</h2>
        <ul>
-           <li>HOME</li>
-           <li>ABOUT </li>
-           <li>CONTACT </li>
-            <li>SERVICES </li>
-            <li>PRODUCT </li>
+       <li>  
+          <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+          <li>
+            <Link to="/product">Product</Link> 
+           
+          </li>
              </ul>
          </div>
          <div className="info">
