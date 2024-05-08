@@ -29,7 +29,10 @@ import Pagination from './Pagination.js';
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser) ;  
+  const currentUsers = users && users.length > 0
+    ? users.slice(indexOfFirstUser, indexOfLastUser)
+    : []
+  ;  
   return (
     <div>
       <h1 style={{textAlign:"center",color:"brown"}}>UserData</h1>
@@ -38,7 +41,7 @@ import Pagination from './Pagination.js';
           <Table users={currentUsers} />
           <Pagination
             currentPage={currentPage}
-            totalusers={users.length}
+            totalUsers={users.length}
             usersPerPage= {usersPerPage}
             setCurrentPage={setCurrentPage}
           />
