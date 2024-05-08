@@ -22,7 +22,9 @@ const Home = () => {
         </div>
       )}
     </div>
+    <div>
     <Page />
+    </div>
     </div>
 </>
   );

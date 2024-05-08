@@ -22,7 +22,7 @@ import { signupSuccess,
         resetPasswordFailure, 
         sendPasswordResetEmailSuccess,
          sendPasswordResetEmailFailure
-         } from '../../redux/actions/authActions'; 
+         } from '../../redux-toolkit/slices/authSlice'; 
 import { useDispatch} from 'react-redux';
 
 const AuthContext = createContext();

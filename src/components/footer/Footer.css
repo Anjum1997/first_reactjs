@@ -89,9 +89,9 @@
   .list_items ul li {
     padding: 0 10px;
     font-weight: 500;
-    color:darkred;
+    color:rgb(226, 224, 195);
     font-size:17px;
-    display:block
+    display:block;
   }
   .info{
     width:280px;

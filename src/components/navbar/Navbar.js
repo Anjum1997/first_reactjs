@@ -61,9 +61,15 @@ const Navbar = () => {
       <button className="login-btn" onClick={handleButtonClick}><span></span>
           {user ? 'Logout' : 'Signup'}
         </button>
-        {/* <ul>
-        <li><Link to="/cart">Cart </Link></li>
-        </ul> */}
+      <div>
+         <ul>
+       <li>
+          <Link to="/cart">
+               <i className="fas fa-shopping-cart"></i> 
+              </Link>
+            </li>
+        </ul> 
+        </div>
        </div>
       </div>
    </div>

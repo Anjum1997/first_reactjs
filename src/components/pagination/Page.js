@@ -18,7 +18,6 @@ import Pagination from './Pagination.js';
   const fetchData = async () => {
     try {
       const response = await axios.get("https://dummyjson.com/users");
-      console.log(response);
       setUsers(response.data.users);
   
     
@@ -26,25 +25,21 @@ import Pagination from './Pagination.js';
       console.error('Error fetching data:', error);
     }
   };
-
-  const usersPerPage =5;
+  const usersPerPage = 5;
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   
-  const currentUsers = users && users.length > 0
-    ? users.slice(indexOfFirstUser, indexOfLastUser)
-    : []
-  ;  
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser) ;  
   return (
     <div>
-      <h1 style={{textAlign:"center"}}>user Data</h1>
+      <h1 style={{textAlign:"center",color:"brown"}}>UserData</h1>
      
         <>
           <Table users={currentUsers} />
           <Pagination
             currentPage={currentPage}
-            totalPosts={users.length}
-            postsPerPage={usersPerPage}
+            totalusers={users.length}
+            usersPerPage= {usersPerPage}
             setCurrentPage={setCurrentPage}
           />
         </>
