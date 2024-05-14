@@ -1,12 +1,14 @@
 import React from 'react';
 import { useAuthContext } from '../context/AuthContext';
 import Page from "../pagination/Page.js";
+import Navbar from '../navbar/Navbar.js';
 
 const Home = () => {
   const { user } = useAuthContext();
 
   return (
     <>
+    <Navbar />
     <div>
     <div  style ={{width:"300px",height:"250px" ,margin:"auto",paddingTop:"30px"}} >
       <h2>Profile Page</h2>

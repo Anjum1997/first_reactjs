@@ -1,33 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-const SingleProductPage = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux-toolkit/slices/cartSlice';
+import './productCartPage.css';
 
-  useEffect(() => {
-    axios.get(`https://dummyjson.com/products/${id}`)
-      .then(response => {
-        setProduct(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching product:', error);
-      });
-  }, [id]);
+const SingleProductPage = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+  const handleAddToCart = () => {
+    dispatch(addItem({ ...product, quantity }));
+  };
+
+  const handleQuantityChange = (e) => {
+    const value = parseInt(e.target.value);
+    setQuantity(isNaN(value) ? 1 : value);
+  };
 
   return (
-    <div>
-      <h2>{product.name}</h2>
-      <img src={product.imageUrl} alt={product.name} />
-      <p>{product.description}</p>
-      <p>Price: {product.price}</p>
-    </div>
-  );
+    <div className="single-product-container">
+    {product && (
+      <>
+        <img src={product?.image} alt={product?.title} />
+        <div className="product-details">
+          <h2>{product?.title}</h2>
+          <p>{product?.description}</p>
+          <p>Price: ${product?.price}</p>
+          <input
+            type="number"
+            value={quantity}
+            min={1}
+            onChange={handleQuantityChange}
+          />
+          <button onClick={handleAddToCart}>Add to Cart</button>
+        </div>
+      </>
+    )}
+  </div>
+);
 };
 
 export default SingleProductPage;

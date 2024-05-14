@@ -6,6 +6,7 @@ import {signupSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
+import Navbar from "../navbar/Navbar";
 
 
 const initialValues = {
@@ -43,8 +44,8 @@ const SignUp = () => {
 
   return (
     <>
-   
-        <div className="modal">
+      <Navbar />
+        <div className="Signin">
           <div className="modal_">
             <img src={icon} alt="Logo" className="log" /> 
             <h2>SignUp</h2>

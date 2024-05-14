@@ -5,6 +5,7 @@ import {  resetPasswordSchema } from "./Schema";
 import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
+import Navbar from "../navbar/Navbar";
 
 const ResetPassword = () => {
   const { resetPasswordWithToken, error } = useAuthContext();
@@ -44,6 +45,7 @@ const ResetPassword = () => {
 
   return (
     <>
+    <Navbar />
     <div className="r-password">
         <div className="modal_">
         <img src={icon} alt="Logo" className="log" /> 

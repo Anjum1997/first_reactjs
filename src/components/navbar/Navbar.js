@@ -1,5 +1,6 @@
 import React  from 'react';
 import { Link, useNavigate} from "react-router-dom";
+import { useSelector } from 'react-redux';
 import logo from "../../assets/image/imagelogo.png";
 import { useAuthContext } from "../context/AuthContext";
 import "./Navbar.css";
@@ -8,8 +9,9 @@ import "./Navbar.css";
 const Navbar = () => {
  
   const { user ,signout} = useAuthContext();
+  
  const navigate = useNavigate();
-
+ const cart = useSelector(state => state.cart.cart); 
   const handleButtonClick = () => {
     if (user) {
       handleSignOut();
@@ -57,18 +59,15 @@ const Navbar = () => {
         </ul>
       
       </nav>
-      <div className="search-bar">
+      <div className="shop-icon">
       <button className="login-btn" onClick={handleButtonClick}><span></span>
-          {user ? 'Logout' : 'Signup'}
+          {user ? 'Logout' : 'Login'}
         </button>
-      <div>
-         <ul>
-       <li>
-          <Link to="/cart">
-               <i className="fas fa-shopping-cart"></i> 
-              </Link>
-            </li>
-        </ul> 
+        <div className="cart-icon">
+            <Link to="/cart">
+              <i className="fas fa-shopping-cart"></i>
+              <span className="cart-count">{cart.length}</span>
+            </Link>
         </div>
        </div>
       </div>

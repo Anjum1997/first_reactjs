@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { contactSchema } from "../login/Schema";
 import "../login/Form.css";
+import Navbar from "../navbar/Navbar";
 
 
 
@@ -43,6 +44,7 @@ const ContactPage = () => {
 
   return (
     <>
+    <Navbar />
     <div className="section-contact">
     <div  className="contact-form">
       <h2>Contact Us</h2>

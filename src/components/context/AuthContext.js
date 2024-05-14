@@ -113,7 +113,7 @@ export function AuthContextProvider({ children }) {
   const saveUserDataToFirestore = async (user) => {
     try {
       const usersCollection = collection(firestore, 'users');
-      await addDoc(usersCollection, { email: user.email });
+      await addDoc(usersCollection, {user});
       console.log('User data saved to Firestore successfully.');
     } catch (error) {
       console.error('Error saving user data to Firestore:', error);

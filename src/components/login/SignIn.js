@@ -6,7 +6,7 @@ import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg"; 
 import googleIcon from "../../assets/image/google.png";
-
+import Navbar from "../navbar/Navbar";
 
 
 const initialValues = {
@@ -55,8 +55,8 @@ const SignIn = () => {
 
   return (
     <>
-      
-        <div className="modal">
+      <Navbar />
+        <div className="Signin">
           <div className="modal_login">
             <img src={icon} alt="Logo" className="log" />
             <h2>Login</h2>

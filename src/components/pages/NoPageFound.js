@@ -1,13 +1,11 @@
 import React from 'react';
-import ver from "../../assets/image/leber.png";
+
 
 const NoPageFound = () => {
   return (
     <div>
-     <div>
-      <img src= {ver} className="ver" alt="verta" />
-      </div> 
-   <h1 style={{color:"red"}}>none of the page you are looking for is found</h1>
+     <h2 style={{color:"red"}}>404</h2>
+   <p style={{color:"green"}}>THE PAGE YOU ARE SEARCHING FOR IS NOT PRESENT</p>
     </div>
   )
 }

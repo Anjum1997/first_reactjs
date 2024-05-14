@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 
-const ProductPage = () => {
-  const [products, setProducts] = useState([]);
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux-toolkit/slices/cartSlice';
+import './productCartPage.css';
 
-  useEffect(() => {
-    axios.get('https://dummyjson.com/products')
-      .then(response => {
-        console.log(response);
-        setProducts(response.data.products);
+const ProductPage = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
-      })
-      .catch(error => {
-        console.error('Error fetching products:', error);
-      });
-  }, []);
+  const handleAddToCart = () => {
+    dispatch(addItem({ ...product, quantity }));
+  };
+
+  const handleQuantityChange = (e) => {
+    if (e.target.value < 1) {
+      setQuantity(1);
+    } else {
+      setQuantity(e.target.value);
+    }
+  };
 
   return (
-    <div>
-      <h2>Products</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <Link to={`/product/${product.id}`}>
-              <img src={product.imageUrl} alt={product.name} />
-              <span>{product.name}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="product-container">
+      <div className="product-image">
+        <img src={product.image} alt={product.title} />
+      </div>
+      <div className="product-details">
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+        <p>Price: ${product.price}</p>
+        <input
+          type="number"
+          value={quantity}
+          min={1}
+          onChange={handleQuantityChange}
+        />
+        <button onClick={handleAddToCart}>Add to Cart</button>
+      </div>
     </div>
   );
 };

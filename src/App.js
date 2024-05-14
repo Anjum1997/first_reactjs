@@ -14,8 +14,8 @@ import SignUp from './components/login/SignUp.js';
  import ForgotPassword from "./components/login/ForgotPassword.js";
  import ResetPassword from "./components/login/ResetPassword.js";
 import Notification from './components/firebase/Notification.js';
-
-
+import CartPage from './components/productcart/CartPage.js';
+import Modal from './components/modals/Modal.js';
 
 
     function App() {
@@ -31,10 +31,12 @@ import Notification from './components/firebase/Notification.js';
 <Route path="/contact" element={<Contact />} />
 <Route path="/services" element={<Services />} />
 <Route path="/product" element={<Product />} />
+<Route path="/cart" element={<CartPage />} /> 
 <Route path="/signup" element={<SignUp />} />
 <Route path="/signin" element={<SignIn />} />
 <Route path="/forgotpassword" element={<ForgotPassword />} />
  <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
+ <Route path="/modal" element={<Modal  />} /> 
 <Route path="*" element={<NoPageFound/>} />
 
 

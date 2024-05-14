@@ -5,7 +5,9 @@
    box-sizing: border-box;
    border: 2px solid green;
    display: flex;
+   background-color:burlywood;
    margin:auto;
+   
 }
 .logo{
     width:400px;
@@ -18,12 +20,12 @@
     padding-top:5px;
 }
 .list{
-    width:840px;
+    width:836px;
     height:45px;
     display: flex;
 }
 nav{
-    width:660px;
+    width:640px;
     height:40px;
 }
 nav ul{
@@ -62,10 +64,11 @@ nav ul li a{
 nav ul li a:hover{
     color:green
 }
-.search-bar {
+.shop-icon {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width:185px;
+    width:215px;
 
   }
   
@@ -106,3 +109,30 @@ nav ul li a:hover{
   }
 
   
+.cart-icon {
+  position: relative;
+  width:40px;
+  height:30px;
+  margin-top:6px;
+  margin-left:50px;
+}
+
+.cart-icon i {
+  font-size: 24px;
+  color: rgba(167, 8, 178, 0.905);
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top:-6px;
+  right:-8px;
+  width:20px;
+  height:16px;
+  background-color: rgb(23, 180, 36);
+  color: #f8f1f4;
+  border-radius: 100%;
+  font-size: 14px;
+  padding-left:2px;
+  z-index:1;
+}

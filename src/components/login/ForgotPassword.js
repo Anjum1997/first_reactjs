@@ -6,6 +6,7 @@ import { useAuthContext } from "../context/AuthContext";
 import './Form.css';
 import icon from "../../assets/image/form-icon.jpg";
 import { v4 as uuidv4 } from 'uuid'; 
+import Navbar from "../navbar/Navbar";
 
 
 
@@ -37,6 +38,7 @@ const ForgotPassword = () => {
 
   return (
     <>
+    <Navbar />
 <div className="r-password">
     <div className="modal_login">
     <img src={icon} alt="Logo" className="log" /> 
