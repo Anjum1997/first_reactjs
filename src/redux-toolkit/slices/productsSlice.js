@@ -1,9 +1,10 @@
-
+// productsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-import { products} from "../../components/productcart/ProductData";
+import { products } from "../../components/productcart/ProductData";
 
 const initialState = {
   products: products,
+  filteredProducts: products, 
   cart: [],
 };
 
@@ -14,21 +15,21 @@ const productsSlice = createSlice({
     addToCart(state, action) {
       const productToAdd = state.products.find(product => product.id === action.payload.id);
       if (productToAdd) {
-        return {
-          ...state,
-          cart: [...state.cart, productToAdd]
-        };
+        state.cart.push(productToAdd);
       }
-      return state;
     },
     removeFromCart(state, action) {
       state.cart = state.cart.filter(item => item.id !== action.payload);
     },
+    filterProductsByType(state, action) {
+      state.filteredProducts = state.products.filter(product => product.type === action.payload);
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = productsSlice.actions;
+export const { addToCart, removeFromCart, filterProductsByType } = productsSlice.actions;
 export default productsSlice.reducer;
+
 
 
 

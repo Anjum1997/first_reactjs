@@ -3,13 +3,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../../redux-toolkit/slices/productsSlice';
+import Navbar from "../navbar/Navbar";
 import "./productCartPage.css";
 
 
 const SingleProductPage = () => {
   const { productId } = useParams();
   const product = useSelector(state => state.products.products.find(product => product.id === productId));
-  console.log(product);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -24,6 +24,7 @@ const SingleProductPage = () => {
   return (
 
 <>
+<Navbar />
     <div className="single-product">
       <div className="product-section"  key={product.id}>
       <img src={ product.image } alt={product.name} />

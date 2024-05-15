@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../../redux-toolkit/slices/productsSlice';
+import Navbar from "../navbar/Navbar";
 import "./productCartPage.css";
 
 const CartPage = () => {
@@ -20,6 +21,7 @@ const CartPage = () => {
 
   return (
     <>
+    <Navbar />
     <div className="cart-container">
       <h2>Cart</h2>
       {cart.length === 0 ? (

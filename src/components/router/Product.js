@@ -1,13 +1,12 @@
 import React from 'react';
 import ProductListPage from '../productcart/ProductListpage';
-import Navbar from "../navbar/Navbar";
+
 
 
 
 const Product = () => {
   return (
     <div>
-      <Navbar />
       <ProductListPage />
     </div>
   )

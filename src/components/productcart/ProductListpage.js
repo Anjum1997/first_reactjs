@@ -3,11 +3,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../redux-toolkit/slices/productsSlice';
+import Navbar from "../navbar/Navbar";
 import "./productCartPage.css";
+import Sidebar from './Sidebar';
 
 
 const ProductListPage = () => {
-  const products = useSelector(state => state.products.products);
+  const products = useSelector(state => state.products.filteredProducts); 
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
@@ -17,6 +19,10 @@ const ProductListPage = () => {
   return (
 
     <>
+    <Navbar />
+    <div  className='filter'>
+    <Sidebar />
+    <div className='product-card'>
     <h2 className='product-heading'>Product Store</h2>
     <div className="product-list">
       {products.map(product => (
@@ -31,6 +37,8 @@ const ProductListPage = () => {
           <button  className = "product-button" onClick={() => handleAddToCart(product)}>Add to Cart</button>
         </div>
       ))}
+    </div>
+    </div>
     </div>
     </>
   );
