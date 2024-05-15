@@ -38,6 +38,7 @@ const modal = useSelector(selectModal);
     </div>
   </div>
  </div>
+ 
     </>
   )
 }

@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user ,signout} = useAuthContext();
   
  const navigate = useNavigate();
- const cart = useSelector(state => state.cart.cart); 
+ const cart = useSelector(state => state.products.cart);
   const handleButtonClick = () => {
     if (user) {
       handleSignOut();
