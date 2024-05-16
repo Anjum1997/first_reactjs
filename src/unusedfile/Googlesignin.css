@@ -1,0 +1,24 @@
+.Gmail-login {
+  text-align: center;
+  padding: 20px;
+  width:500px;
+  height:420px;
+  margin:auto;
+}
+
+.user-data {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.user-data h2 {
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
