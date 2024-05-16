@@ -4,7 +4,7 @@ import './VideoPlayer.css';
 const VideoPlayer = () => {
   return (
     <>
-      <div className="third-party">
+      <div className="video-player">
         <h2>Video Player</h2>
         <div className="video-container">
           <iframe

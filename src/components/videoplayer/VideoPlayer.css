@@ -1,11 +1,11 @@
 
-.third-party{
+.video-player{
   width:1260px; 
     height: 520px; 
     margin:20px;
     margin:auto;
 }
-.third-party h2 { 
+.video-player h2 { 
   color: #b01111; 
   font-size: 26px;
   text-align: center; 
