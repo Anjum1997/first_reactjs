@@ -31,9 +31,9 @@ const Header = () => {
 <p>congratulations to all for your dedication and<br/>hard work at every moment for the growth<br/> and development of the company. </p>
       </div>
       <div className="btn_">
-                <button type ="button" className="begin" onClick={handleOpen}>  {isModalOpen && <Modal />}ready to begin...</button>
+      {isModalOpen && <Modal />}
+                <button type ="button" className="begin" onClick={handleOpen}>  ready to begin...</button>
             </div>
-            {isModalOpen && <Modal />}
     </div>
   </div>
  </div>

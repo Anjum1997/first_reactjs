@@ -17,11 +17,14 @@ import Notification from './components/firebase/Notification.js';
 import CartPage from './components/productcart/CartPage.js';
 import Modal from './components/modals/Modal.js';
 import SingleProductPage from "./components/productcart/SingleProductPage.js"
+ import ViewPdf from './components/pdf/ViewPdf.js';
 
 
     function App() {
+
+      const pdfUrl = 'https://dl.ebooksworld.ir/books/Beginning.ReactJS.Foundations.Chris.Minnick.Wiley.9781119685548.EBooksWorld.ir.pdf';
+
     
-      
       return (
           <>
   <AuthContextProvider>
@@ -39,11 +42,9 @@ import SingleProductPage from "./components/productcart/SingleProductPage.js"
 <Route path="/forgotpassword" element={<ForgotPassword />} />
  <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
  <Route path="/modal" element={<Modal  />} /> 
+ <Route path="/pdf" element={<ViewPdf pdfUrl={pdfUrl} />} />
 <Route path="*" element={<NoPageFound/>} />
-
-
 </Routes>
-
 <Notification />
 </AuthContextProvider>  
        </>

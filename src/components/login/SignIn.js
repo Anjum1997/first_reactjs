@@ -102,6 +102,7 @@ const SignIn = () => {
           <button  className="login" type="submit">SignIN</button> 
         </div>
      </form>
+    <div style={{textAlign:"center",color:"red"}}>OR</div>
      <div className="google_">
      <button className="google" onClick={handleGoogleSignIn}>
             <img src={googleIcon} alt="Google Icon" className="google-icon" />
