@@ -7,12 +7,14 @@ import Community from "../components/pages/Community.js";
 import AboutCompany from "../components/pages/AboutCompany.js";
 import Employees from "../components/pages/Employees.js";
 import VideoPlayer from "../components/videoplayer/VideoPlayer.js"
-
-
-
-
+import AudioPlayer from '../components/audioplayer/AudioPlayer.js';
 
 const Layout = () => {
+
+  const audioSrc = 'https://dl2.djring.com/sd2.djjohal.com/128/519628/After%20Death(DJJOhAL.Com).mp3';
+  const audioName = 'After death';
+  const thumbnailSrc = 'https://img.freepik.com/free-psd/music-concert-youtube-cover-template_23-2149959361.jpg?size=626&ext=jpg&ga=GA1.1.1388286115.1709657894&semt=ais_user';
+
   return (
     <div>
      
@@ -23,6 +25,7 @@ const Layout = () => {
       <Info />
       <Employees />
          <VideoPlayer />
+         <AudioPlayer audioSrc={audioSrc} audioName={audioName} thumbnailSrc={thumbnailSrc} />
       <Footer/>
     
      
