@@ -1,0 +1,32 @@
+.Agora {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.Agora-container {
+  margin: 20px auto;
+  background-color: black;
+  width: 420px;
+  height: 280px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

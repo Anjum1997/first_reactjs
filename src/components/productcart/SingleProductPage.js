@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../../redux-toolkit/slices/productsSlice';
 import Navbar from "../navbar/Navbar";

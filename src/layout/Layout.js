@@ -8,8 +8,10 @@ import AboutCompany from "../components/pages/AboutCompany.js";
 import Employees from "../components/pages/Employees.js";
 import VideoPlayer from "../components/videoplayer/VideoPlayer.js"
 import AudioPlayer from '../components/audioplayer/AudioPlayer.js';
+import AgoraCall from "../components/videocall/AgoraCall.js";
 
 const Layout = () => {
+
 
   const audioSrc = 'https://dl2.djring.com/sd2.djjohal.com/128/519628/After%20Death(DJJOhAL.Com).mp3';
   const audioName = 'After death';
@@ -26,6 +28,7 @@ const Layout = () => {
       <Employees />
          <VideoPlayer />
          <AudioPlayer audioSrc={audioSrc} audioName={audioName} thumbnailSrc={thumbnailSrc} />
+         <AgoraCall />
       <Footer/>
     
      
