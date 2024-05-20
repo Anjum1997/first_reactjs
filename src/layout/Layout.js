@@ -9,6 +9,8 @@ import Employees from "../components/pages/Employees.js";
 import VideoPlayer from "../components/videoplayer/VideoPlayer.js"
 import AudioPlayer from '../components/audioplayer/AudioPlayer.js';
 import AgoraCall from "../components/videocall/AgoraCall.js";
+import Map from '../components/maps/Map.js';
+import "../components/maps/Map.css";
 
 const Layout = () => {
 
@@ -19,7 +21,6 @@ const Layout = () => {
 
   return (
     <div>
-     
       <Header />
       <Outlet />
       <Community />
@@ -29,6 +30,10 @@ const Layout = () => {
          <VideoPlayer />
          <AudioPlayer audioSrc={audioSrc} audioName={audioName} thumbnailSrc={thumbnailSrc} />
          <AgoraCall />
+         <div className="map">
+      <h1>Google Maps with Markers in India</h1>
+      <Map />
+    </div>
       <Footer/>
     
      

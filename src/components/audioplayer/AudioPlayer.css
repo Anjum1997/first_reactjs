@@ -20,17 +20,19 @@
   flex: 1;
 }
 
-.controls {
+.control {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
 
-.controls button {
+.control  button {
   margin-right: 10px;
+  width:70px;
+  height:25px;
 }
 
-.controls input[type="range"] {
+.control input[type="range"] {
   margin-left: 10px;
 }
 

@@ -4,7 +4,7 @@ import './AgoraCall.css';
 
 const APP_ID= '959695bfdd1f4f6bb96494940d570802';
 const CHANNEL = 'anjummishra';
-const TOKEN  = '007eJxTYDhQoOSYZefAttl5pr5A8FzXbb0f7+8OW5dubbHzy9u9754pMFiaWppZmialpaQYppmkmSUlWZqZWAKhQYqpuYGFgdFHQa+0hkBGhnlLGBkZGSAQxOdmSMzLKs3NzSzOKEpkYAAALi8iMQ=='; 
+const TOKEN  = '007eJxTYOBO78+vzapLeVUYVOCW73VC+97Ux+uvGa2WZX158POkt5cUGCxNLc0sTZPSUlIM00zSzJKSLM1MLIHQIMXU3MDCwOhblndaQyAjQ9SWg4yMDBAI4nMzJOZllebmZhZnFCUyMAAAmHcj0Q=='; 
 
 const client = AgoraRTC.createClient({ mode: 'rtc', codec: 'vp8' });
 
@@ -31,7 +31,7 @@ function AgoraCall() {
       const remotePlayerContainer = document.createElement('div');
       remotePlayerContainer.id = user.uid;
       remotePlayerContainer.style.width = '420px';
-      remotePlayerContainer.style.height = '280px';
+      remotePlayerContainer.style.height = '240px';
       document.body.append(remotePlayerContainer);
       remoteVideoTrack.play(remotePlayerContainer);
     }

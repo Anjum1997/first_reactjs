@@ -48,7 +48,7 @@ const AudioPlayer = ({ audioSrc, audioName, thumbnailSrc }) => {
       <div className="details">
         <h3>{audioName}</h3>
         <audio ref={audioRef} src={audioSrc}></audio>
-        <div className="controls">
+        <div className="control">
           <button onClick={togglePlayPause}>
             {isPlaying ? 'Pause' : 'Play'}
           </button>
@@ -76,3 +76,8 @@ export default AudioPlayer;
 
 
  
+//npm init
+//script 
+//start:'node file.js'
+//npm start
+//npm install nodemon

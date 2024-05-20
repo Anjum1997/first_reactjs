@@ -3,7 +3,11 @@
   padding-top: 20px;
   margin:auto;
 }
-
+.Agora h1{
+  font-size: 24px;
+  margin: 20px 0;
+  color:green;
+}
 .Agora-container {
   margin: 20px auto;
   background-color: black;

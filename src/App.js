@@ -18,6 +18,8 @@ import CartPage from './components/productcart/CartPage.js';
 import Modal from './components/modals/Modal.js';
 import SingleProductPage from "./components/productcart/SingleProductPage.js"
  import ViewPdf from './components/pdf/ViewPdf.js';
+ import VideoPlayer from './components/videoplayer/VideoPlayer.js';
+ import AgoraCall from './components/videocall/AgoraCall.js';
 
 
     function App() {
@@ -43,6 +45,8 @@ import SingleProductPage from "./components/productcart/SingleProductPage.js"
  <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
  <Route path="/modal" element={<Modal  />} /> 
  <Route path="/pdf" element={<ViewPdf pdfUrl={pdfUrl} />} />
+ <Route path="/video" element={<VideoPlayer />} />
+ <Route path="/agoracall" element={<AgoraCall />} />
 <Route path="*" element={<NoPageFound/>} />
 </Routes>
 <Notification />
