@@ -76,8 +76,3 @@ export default AudioPlayer;
 
 
  
-//npm init
-//script 
-//start:'node file.js'
-//npm start
-//npm install nodemon

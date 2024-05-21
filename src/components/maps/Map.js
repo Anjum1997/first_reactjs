@@ -20,7 +20,7 @@ const locations = [
 
 const Map = () => {
   return (
-    <LoadScript googleMapsApiKey=" AIzaSyDz4EZ52YheBSCJezVdSnhPO16Lz3fY4uc">
+    <LoadScript googleMapsApiKey=" AIzaSyBPiODyK3IMgrq0805wpHsA4gISlLMPl-w">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
